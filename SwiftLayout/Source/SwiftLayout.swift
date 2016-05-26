@@ -8,6 +8,27 @@
 
 import Foundation
 
+extension CGRect {
+   
+    /**
+     Returns the frame's center position
+     
+     - returns: center of the rect
+     */
+    func center() -> CGPoint {
+        return CGPointMake(self.midX, self.midY)
+    }
+    
+    /**
+     Returns the bounds value, with a CGPointZero origin
+     
+     - returns: bounds for the rect
+     */
+    func bounds() -> CGRect {
+        return CGRectMake(0, 0, self.midX, self.midY)
+    }
+}
+
 enum VerticalAlign {
     case Top
     case Base
@@ -36,7 +57,7 @@ extension UIView {
      - parameter verticalOffset:   the horizontal offset to apply to the relative vertical alignment
      */
     func alignToView(otherView          : UIView,
-                     horizontal         :  HorizontalAlign,
+                     horizontal         : HorizontalAlign,
                      vertical           : VerticalAlign ,
                      horizontalOffset   : CGFloat = 0.0,
                      verticalOffset     : CGFloat = 0.0) {
@@ -100,7 +121,7 @@ extension UIView {
                                          vertical: vertical,
                                          horizontalOffset: horizontalOffset,
                                          verticalOffset: verticalOffset)
-        
+
         if CGRectEqualToRect(self.frame, newRect) == false {
             self.frame = newRect
         }
@@ -138,39 +159,6 @@ extension UIView {
     
     
     /**
-     When using keyframe animations, the frame is not an animatable property, thus we need to 
-     create two animations, one for the bounds, and one for the position for the layer.
-     This method returns both the new bounds, and the new position for the newly
-     calculated relative frame.
-     
-     - parameter newSize:          new size to for the calculated bounds
-     - parameter toFrame:          the relative frame to calculate and align against
-     - parameter horizontal:       the relative horizontal alignment to the other frame
-     - parameter vertical:         the relative vertical alignment to the other frame
-     - parameter horizontalOffset: the horizontal offset to apply to the relative horizontal alignment
-     - parameter verticalOffset:   the horizontal offset to apply to the relative vertical alignment
-     
-     - returns: tuple with a new bounds value, and the new center value
-     */
-    class func alignedBoundsWithPositionFor(newSize : CGSize,
-                                  toFrame           : CGRect,
-                                  horizontal        : HorizontalAlign,
-                                  vertical          : VerticalAlign,
-                                  horizontalOffset  : CGFloat = 0.0,
-                                  verticalOffset    : CGFloat = 0.0) -> (newBounds : CGRect, newPosition : CGPoint) {
-        
-        let newRect =  UIView.alignedRectFor(newSize,
-                                             toFrame          : toFrame,
-                                             horizontal       : horizontal,
-                                             vertical         : vertical,
-                                             horizontalOffset : horizontalOffset,
-                                             verticalOffset   : verticalOffset)
-        
-        return (UIView.boundsForRect(newRect) , UIView.centerForRect(newRect))
-    }
-    
-    
-    /**
      Calculates and returns a new center point relative to the toFrame passed in.
      
      - parameter newSize:          new size to for the calculated bounds
@@ -196,33 +184,9 @@ extension UIView {
                                              horizontalOffset : horizontalOffset,
                                              verticalOffset   : verticalOffset)
         
-        return UIView.centerForRect(newRect)
+        return newRect.center()
     }
-    
-    
-    /**
-     Private class method that calculates a center point for a frame
-     
-     - parameter source:  source frame to calculate for center point
-     - returns: center point for the input frame
-     */
-    final class private func centerForRect(source : CGRect) -> CGPoint {
-        return CGPointMake(source.origin.x + (source.size.width / 2.0),
-                           source.origin.y + (source.size.height / 2.0))
-    }
-    
-    
-    /**
-     Private class method that returns a bounds value, basically the frame wih
-     an origin of CGPointZero 
-     
-     - parameter source:  source frame to calculate for bounds against
-     - returns:           new boudns value for the rect
-     */
-    final class private func boundsForRect(source : CGRect) -> CGRect {
-        return CGRectMake(0 ,0, source.width, source.height)
-    }
-    
+
     
     /**
      Calculates a horizontally aligned frame for the source frame relative to 
