@@ -7,43 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
-extension CGRect {
-   
-    /**
-     Returns the frame's center position
-     
-     - returns: center of the rect
-     */
-    func center() -> CGPoint {
-        return CGPointMake(self.midX, self.midY)
-    }
-    
-    /**
-     Returns the bounds value, with a CGPointZero origin
-     
-     - returns: bounds for the rect
-     */
-    func bounds() -> CGRect {
-        return CGRectMake(0, 0, self.midX, self.midY)
-    }
+public enum VerticalAlign {
+    case Above          // Align vertically Above
+    case Below          // Align vertically Below
+    case Center         // Align center.y vertically
+    case Top            // Align vertically to the top
+    case Base           // Align vertically to the base
 }
 
-enum VerticalAlign {
-    case Top
-    case Base
-    case Center
-    case Above
-    case Below
+public enum HorizontalAlign {
+    case Left           // Align horizontally to the Left
+    case Right          // Align horizontally to the Right
+    case Center         // Align center.y horizontally
+    case RightEdge      // Align horizontally to the Right Edge
+    case LeftEdge       // Align horizontally to the Left Edge
 }
 
-enum HorizontalAlign {
-    case Left
-    case Right
-    case Center
-    case RightEdge
-    case LeftEdge
-}
+// MARK: - UIView Direct Alignment Extension
 
 extension UIView {
     
@@ -126,7 +108,11 @@ extension UIView {
             self.frame = newRect
         }
     }
-    
+}
+
+// MARK: - Calculated Return Value Methods
+
+extension UIView {
     
     /**
      Calculates and returns the frame with a new size relative to the toFrame passed in.
@@ -186,62 +172,88 @@ extension UIView {
         
         return newRect.center()
     }
+}
 
+
+// MARK: - Calculation Logic Extension
+
+/**
+ Calculates a horizontally aligned frame for the source frame relative to
+ the destination frame
+ 
+ - parameter source : source frame
+ - parameter dest   : destination frame
+ - parameter align  : horizontal alignment to adjust the source frame by
+ 
+ - returns          : horizontally aligned frame relative to the destination frame
+ */
+func alignedHorizontalOriginWithFrame(source : CGRect,  dest : CGRect, align : HorizontalAlign) -> CGFloat {
+    var origin = source.origin.x
+    
+    switch (align) {
+    case .Left:
+        origin = dest.origin.x - source.size.width;
+    case .Right:
+        origin = CGRectGetMaxX(dest);
+    case .Center:
+        origin = dest.origin.x + ((dest.size.width - source.size.width) / 2.0);
+    case .LeftEdge:
+        origin = dest.origin.x;
+    case .RightEdge:
+        origin = CGRectGetMaxX(dest) - source.size.width;
+    }
+    return round(origin)
+}
+
+
+/**
+ Calculates a vertically aligned frame for the source frame relative to
+ the destination frame
+ 
+ - parameter source : source frame
+ - parameter dest   : destination frame
+ - parameter align  : vertically alignment to adjust the source frame by
+ 
+ - returns          : vertically aligned frame relative to the destination frame
+ */
+func alignedVerticalOriginWithFrame(source : CGRect,  dest : CGRect, align : VerticalAlign) -> CGFloat {
+    var origin = source.origin.x
+    
+    switch (align) {
+    case .Top:
+        origin = dest.origin.y
+    case .Base:
+        origin = CGRectGetMaxY(dest) - source.size.height
+    case .Center:
+        origin = dest.origin.y + ((dest.size.height - source.size.height) / 2.0)
+    case .Above:
+        origin = dest.origin.y - source.size.height
+    case .Below:
+        origin = CGRectGetMaxY(dest)
+    }
+    return round(origin)
+}
+
+// MARK: - CGRect Extension
+
+extension CGRect {
     
     /**
-     Calculates a horizontally aligned frame for the source frame relative to 
-     the destination frame
+     Returns the frame's center position
      
-     - parameter source : source frame
-     - parameter dest   : destination frame
-     - parameter align  : horizontal alignment to adjust the source frame by
-     
-     - returns          : horizontally aligned frame relative to the destination frame
+     - returns: center of the rect
      */
-    final class private func alignedHorizontalOriginWithFrame(source : CGRect,  dest : CGRect, align : HorizontalAlign) -> CGFloat {
-        var origin = source.origin.x
-        
-        switch (align) {
-        case .Left:
-            origin = dest.origin.x - source.size.width;
-        case .Right:
-            origin = CGRectGetMaxX(dest);
-        case .Center:
-            origin = dest.origin.x + ((dest.size.width - source.size.width) / 2.0);
-        case .LeftEdge:
-            origin = dest.origin.x;
-        case .RightEdge:
-            origin = CGRectGetMaxX(dest) - source.size.width;
-        }
-        return round(origin)
+    func center() -> CGPoint {
+        return CGPointMake(self.midX, self.midY)
     }
     
-    
     /**
-     Calculates a vertically aligned frame for the source frame relative to
-     the destination frame
+     Returns the bounds value, with a CGPointZero origin
      
-     - parameter source : source frame
-     - parameter dest   : destination frame
-     - parameter align  : vertically alignment to adjust the source frame by
-     
-     - returns          : vertically aligned frame relative to the destination frame
+     - returns: bounds for the rect
      */
-    final class private func alignedVerticalOriginWithFrame(source : CGRect,  dest : CGRect, align : VerticalAlign) -> CGFloat {
-        var origin = source.origin.x
-        
-        switch (align) {
-        case .Top:
-            origin = dest.origin.y
-        case .Base:
-            origin = CGRectGetMaxY(dest) - source.size.height
-        case .Center:
-            origin = dest.origin.y + ((dest.size.height - source.size.height) / 2.0)
-        case .Above:
-            origin = dest.origin.y - source.size.height
-        case .Below:
-            origin = CGRectGetMaxY(dest)
-        }
-        return round(origin)
+    func bounds() -> CGRect {
+        return CGRectMake(0, 0, self.midX, self.midY)
     }
 }
+
