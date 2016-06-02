@@ -13,8 +13,15 @@ Some use cases for this framework include the ability to animate views with core
 
 ##Demo
 
-Once you have finished with the documentation below, feel free to the play with the demo app provided as part of this project. Since the scope of the documentation is limited to a handlful of examples, the demo app provides you ability to pick the different options in the method call. Once selected, the app will align a demo view on the screen to it's final position, and provide a the code example to reflect it.
+Since the scope of the documentation is limited to a handlful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project. 
 
+The demo app provides the ability to pick different options in the method call, once selected, the app will align a demo view on the screen to it's final frame, and provide a code example to reflect it.
+
+An example of how the view controller is layed out in the demo app is can be found [here](/documentation/demo.md)
+
+##Installation
+
+* [Installation Documentation](/documentation/installation.md)
 
 ##Basic Use
 
@@ -152,118 +159,6 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
                  horizontalOffset : CGFloat = 20.0,
                  verticalOffset   : CGFloat = -20.0)
 ```
-
-##Demo App Example
-
-Below is a quick example of the alignment logic to setup the demo app, producing the following layout:
-
-
-![alt tag](/Documentation/SimulatorImage.png?raw=true width='375' height='667')
-
-
-```
-
-struct ViewControllerConfig {    
-    static let SizeBigView              = CGSizeMake(140, 140)
-    static let SizeSmallView            = CGSizeMake(40, 40)
-    static let SizePickerView           = CGSizeMake(UIScreen.mainScreen().bounds.width, 220)
-    static let SizeCodeLabel            = CGSizeMake(UIScreen.mainScreen().bounds.width - 60, 120)
-    
-    static let VerticalOffsetBigView    = CGFloat(80)
-    static let VerticalOffsetPickerView = CGFloat(-10)
-    static let VerticalOffsetCodeLabel  = CGFloat(-50)
-}
-
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureInterface()
-        alignInterface()
-    }
-    
-    func configureInterface() {
-        view.addSubview(bigView)
-        view.addSubview(smallView)
-        view.addSubview(codeLabel)
-        view.addSubview(pickerView)
-    }
-    
-    func alignInterface() {
-        bigView.align(withSize          : ViewControllerConfig.SizeBigView,
-                      vertical          : .Top,
-                      verticalOffset    : ViewControllerConfig.VerticalOffsetBigView)
-        
-        smallView.align(toFrame         : bigView.frame,
-                        withSize        : ViewControllerConfig.SizeSmallView)
-        
-        pickerView.align(withSize       : ViewControllerConfig.SizePickerView,
-                         vertical       : .Base,
-                         verticalOffset : ViewControllerConfig.VerticalOffsetPickerView)
-        
-        codeLabel.align(toFrame         : pickerView.frame,
-                        withSize        : ViewControllerConfig.SizeCodeLabel,
-                        vertical        : .Above,
-                        verticalOffset  : ViewControllerConfig.VerticalOffsetCodeLabel)
-    }
-    
-    ...................
-    
-            Views defined here
-} 
-    
-```
-
-
-##Installation
-
-####Manual Install
-
-1. Clone the [SwiftLayout](git@github.com:AntonTheDev/SwiftLayout.git) repository 
-2. Add the contents of the Source Directory to the project
-
-####CocoaPods
-
-1. Edit the project's podfile, and save
-
-	```
-    pod 'SwiftLayout', :git => 'https://github.com/AntonTheDev/SwiftLayout.git' 
-	```
-2. Install SwiftLayout by running
-
-    ```
-    pod install
-    ```
-    
-####Carthage
-
-The installation instruction below a OSX for iOS.
-
-#####Installation
-
-1. Create/Update the Cartfile with with the following
-	
-	```
-#SwiftLayout
-git "https://github.com/AntonTheDev/SwiftLayout.git"
-	```
-2. Run `carthage update`. This will fetch dependencies into a [Carthage/Checkouts][] folder, then build each one.
-3. In the application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop each framework for use from the Carthage/Build folder on disk.
-4. Follow the installation instruction above. Once complete, perform the following steps
-(If you have setup a carthage build task for iOS already skip to Step 6) 
-5. Navigate to the targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase”. Create a Run Script with the following content:
-
-  	```
-  	/usr/local/bin/carthage copy-frameworks
-  	```
-  	
-6. Add the paths to the frameworks you want to use under “Input Files” within the carthage build phase as follows e.g.:
-
-	```
- 	$(SRCROOT)/Carthage/Build/iOS/SwiftLayout.framework
-  	
-  	```
-
 
 ## License
 <br>
