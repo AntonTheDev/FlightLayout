@@ -11,7 +11,7 @@ SwiftLayout is a simple layout framework intended to be light weight, and easily
 
 Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply parametric easing to layer properties with out having to ensure that constraints are created, updated, or remade at any point of the animation.
 
-##Demo App
+##Demo
 
 Once you have finished with the documentation below, feel free to the play with the demo app provided as part of this project. Since the scope of the documentation is limited to a handlful of examples, the demo app provides you ability to pick the different options in the method call. Once selected, the app will align a demo view on the screen to it's final position, and provide a the code example to reflect it.
 
