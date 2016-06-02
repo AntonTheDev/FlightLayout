@@ -17,11 +17,11 @@ Since the scope of the documentation is limited to a handlful of examples, once 
 
 The demo app provides the ability to pick different options in the method call, once selected, the app will align a demo view on the screen to it's final frame, and provide a code example to reflect it.
 
-An example of how the view controller is layed out in the demo app is can be found [here](/documentation/demo.md)
+An example of how the view controller is layed out in the demo app is can be found [here](/Documentation/demo.md)
 
 ##Installation
 
-* [Installation Documentation](/documentation/installation.md)
+* [Installation Documentation](/Documentation/installation.md)
 
 ##Basic Use
 
