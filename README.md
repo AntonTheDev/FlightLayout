@@ -67,36 +67,98 @@ The framework is composed of two extensions. One extension on the UIView, the ot
 
 ### UIView Extension
 
-The extension allows you to relatively align the frame very easility, as the 
+The `align` method allows you to align the view in question relatively to another with the flexible option of 6 paramaters, 4 of which are asigned default values, allowing a flexible method signature. See below for an indepth description of each parameter.
+<br>
 
 
 ```
-   func align(toFrame  frame             : CGRect = CGRectZero,   // The relative frame to align against
-               withSize size             : CGSize? = nil,         // The new size for the view
-                        horizontal       : HorizontalAlign,       // Horizontal alignment relative frame
-                        vertical         : VerticalAlign,         // Vertical alignment relative frame
-                        horizontalOffset : CGFloat = 0.0,         // Horizontal offset adjustment
-                        verticalOffset   : CGFloat = 0.0)         // Vertical offset adjustment
+   func align(toFrame  frame             : CGRect = CGRectZero,  
+               withSize size             : CGSize? = nil,        
+                        horizontal       : HorizontalAlign,  
+                        vertical         : VerticalAlign, 
+                        horizontalOffset : CGFloat = 0.0, 
+                        verticalOffset   : CGFloat = 0.0)
 ```
 
+#### Horizontal & Vertical Alignment
 
+There are two enumerators defined for horizontal and vertical alignment. There are the magic options that allow you to align a view relative to another frame.
 
+##### Horizontal
 
-##### Horizontal Alignment (HorizontalAlign)
+The following are the horizontal options, with illustrations below
 
-The horizontal alignment  
+```
+public enum HorizontalAlign {
+    case Left           // Align horizontally to the Left
+    case Right          // Align horizontally to the Right
+    case Center         // Align center.y horizontally
+    case RightEdge      // Align horizontally to the Right Edge
+    case LeftEdge       // Align horizontally to the Left Edge
+}
+
+```
 
 ![alt tag](/Documentation/HorizontalAlignment.png?raw=true)
 
+##### Vertical
 
-##### Vertical Alignment (VerticalAlign)
+The following are the vertical options, with illustrations below
+
+
+```
+public enum VerticalAlign {
+    case Above          // Align vertically Above
+    case Below          // Align vertically Below
+    case Center         // Align center.y vertically
+    case Top            // Align vertically to the top
+    case Base           // Align vertically to the base
+}
+
+```
 
 ![alt tag](/Documentation/VerticalAlignment.png?raw=true)
 
 
+##### Example 1
 
-##### Relative Frame and Size
+Assume you add a new view as a subview, and you want to align it dead center relative to the superview's bounds, it's as easy as the following.
 
+
+```
+   view.addSubview(bigView)
+
+   bigView.align(toFrame    : view.bounds,     
+   			     withSize   : CGSizeMake(140, 140),        
+                 horizontal : .Center,  
+                 vertical   : .Center)
+```
+
+##### Example 2
+
+The above is the same as below. If the **toFrame** is ommitted, if it automatically assume that you are intending to align against the view's superview.
+
+```
+   view.addSubview(bigView)
+
+   bigView.align(withSize   : CGSizeMake(140, 140),        
+                 horizontal : .Center,  
+                 vertical   : .Center)
+```
+
+##### Example 3
+
+What if we implemented a sizeToFit method on our view, where it autoresizes itself. We can actually ommit the the **withSize** parameter from the method signature.
+
+```
+   view.addSubview(bigView)
+   
+   bigView.sizeToFit()
+   bigView.align(horizontal : .Center,  
+                 vertical   : .Center)
+```
+
+The horizontal alignment  
 
 
 ##### Horizontal & Vertical Offset
