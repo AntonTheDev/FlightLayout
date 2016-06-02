@@ -155,7 +155,7 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
 
 ##Demo App Example
 
-Below is a quick example of the alignment logic to setup the demo app, production the following layout:
+Below is a quick example of the alignment logic to setup the demo app, producing the following layout:
 
 
 ![alt tag](/Documentation/SimulatorImage.png?raw=true)
@@ -207,31 +207,9 @@ class ViewController: UIViewController {
                         verticalOffset  : ViewControllerConfig.VerticalOffsetCodeLabel)
     }
     
-    //MARK: - Lazy Loaded Views
-     
-    lazy var bigView: UIView = {
-        var view = UIView(frame : CGRectZero)
-        ...
-        return view
-    }()
+    ...................
     
-    lazy var smallView: UIView = {
-        var view = UIView(frame : CGRectZero)
-        ...
-        return view
-    }()
-    
-    lazy var pickerView : UIPickerView = {
-        var picker = UIPickerView()
-        ...
-        return picker
-    }()
-    
-    lazy var codeLabel : UILabel = {
-        var label = UILabel()
-        ...
-        return label
-    }()
+    Views defined here
 } 
     
 ```
