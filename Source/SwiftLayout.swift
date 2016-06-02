@@ -43,7 +43,7 @@ extension UIView {
      - parameter horizontalOffset: horizontal offset to apply to the calculated relative frame, defautls to 0
      - parameter verticalOffset:   vertical offset to apply to the calculated relative frame, defautls to 0
      */
-    func align(toFrame  frame            : CGRect = CGRectZero,
+    func align(toFrame  frame            : CGRect? = nil,
                withSize size             : CGSize? = nil,
                         horizontal       : HorizontalAlign,
                         vertical         : VerticalAlign,
@@ -82,18 +82,24 @@ extension UIView {
      
      - returns: returns the final aligned frame
      */
-    func rectAligned(toFrame  frame            : CGRect  = CGRectZero,
+    func rectAligned(toFrame  frame            : CGRect?  = nil,
                      withSize size             : CGSize? = nil,
                               horizontal       : HorizontalAlign,
                               vertical         : VerticalAlign,
                               horizontalOffset : CGFloat = 0.0,
                               verticalOffset   : CGFloat = 0.0) -> CGRect {
         
-        var relativeFrame = frame
+        var referenceFrame = frame
         
-        if CGRectEqualToRect(CGRectZero, frame) {
+        if let relativeFrame = frame {
+            if CGRectEqualToRect(CGRectZero, relativeFrame) {
+                if let superviewFrame = superview?.bounds {
+                    referenceFrame = superviewFrame
+                }
+            }
+        } else {
             if let superviewFrame = superview?.bounds {
-                relativeFrame = superviewFrame
+                referenceFrame = superviewFrame
             }
         }
         
@@ -104,11 +110,11 @@ extension UIView {
         }
         
         calculatedFrame.origin.x = alignedHorizontalOrigin(forRect          : calculatedFrame,
-                                                           relativeToRect   : relativeFrame,
+                                                           relativeToRect   : referenceFrame!,
                                                            withAlignment    : horizontal)
         
         calculatedFrame.origin.y = alignedVerticalOrigin(forRect        : calculatedFrame,
-                                                         relativeToRect : relativeFrame,
+                                                         relativeToRect : referenceFrame!,
                                                          withAlignment  : vertical)
         
         calculatedFrame.origin.x += horizontalOffset

@@ -63,11 +63,66 @@ git "https://github.com/AntonTheDev/SwiftLayout.git"
 
 ##Basic Use
 
+The framework is composed of two extensions. One extension on the UIView, the other on CGRect.
+
+### UIView Extension
+
+The extension allows you to relatively align the frame very easility, as the 
 
 
+```
+   func align(toFrame  frame             : CGRect = CGRectZero,   // The relative frame to align against
+               withSize size             : CGSize? = nil,         // The new size for the view
+                        horizontal       : HorizontalAlign,       // Horizontal alignment relative frame
+                        vertical         : VerticalAlign,         // Vertical alignment relative frame
+                        horizontalOffset : CGFloat = 0.0,         // Horizontal offset adjustment
+                        verticalOffset   : CGFloat = 0.0)         // Vertical offset adjustment
+```
+
+
+
+
+##### Horizontal Alignment (HorizontalAlign)
+
+The horizontal alignment  
+
+![alt tag](/Documentation/HorizontalAlignment.png?raw=true)
+
+
+##### Vertical Alignment (VerticalAlign)
 
 ![alt tag](/Documentation/VerticalAlignment.png?raw=true)
-![alt tag](/Documentation/HorizontalAlignment.png?raw=true)
+
+
+
+##### Relative Frame and Size
+
+
+
+##### Horizontal & Vertical Offset
+
+
+##### Precalculated Frame
+
+. This is helpful when performing animations, and allows the developer to precalculate the frame.
+
+
+```
+   func rectAligned(toFrame  frame            : CGRect  = CGRectZero,
+                     withSize size             : CGSize? = nil,
+                              horizontal       : HorizontalAlign,
+                              vertical         : VerticalAlign,
+                              horizontalOffset : CGFloat = 0.0,
+                              verticalOffset   : CGFloat = 0.0) -> CGRect
+
+```
+
+
+#### CGREct Extension
+
+
+
+
 
 ## License
 
