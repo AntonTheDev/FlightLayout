@@ -97,7 +97,7 @@ In the following example, first we add the a new view named **bigView** as a sub
                  vertical   : .Center)
 ```
 
-Note: In the case that the calculated frame is the same as the calling views frame, it will not actually set the frame on the caller, it will just exit it. This helps avoid glitches for animations, i.e  setitng the frame on the view that is currently animating, will flicker the view to it's final position.
+Note: In the case that the calculated frame is the same as the calling views frame, it will not actually set the frame on the caller, it will just exit. This helps avoid glitches during animations, i.e  setting the frame on the view that is currently animating, will flicker the view to it's final position.
 
 ##### Example 2
 
@@ -153,8 +153,88 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
                  verticalOffset   : CGFloat = -20.0)
 ```
 
+##Demo App Example
 
-### Precalculated Frame
+Below is a quick example of the alignment logic to setup the demo app, production the following layout:
+
+
+![alt tag](/Documentation/SimulatorImage.png?raw=true)
+
+
+```
+
+struct ViewControllerConfig {    
+    static let SizeBigView              = CGSizeMake(140, 140)
+    static let SizeSmallView            = CGSizeMake(40, 40)
+    static let SizePickerView           = CGSizeMake(UIScreen.mainScreen().bounds.width, 220)
+    static let SizeCodeLabel            = CGSizeMake(UIScreen.mainScreen().bounds.width - 60, 120)
+    
+    static let VerticalOffsetBigView    = CGFloat(80)
+    static let VerticalOffsetPickerView = CGFloat(-10)
+    static let VerticalOffsetCodeLabel  = CGFloat(-50)
+}
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureInterface()
+        alignInterface()
+    }
+    
+    func configureInterface() {
+        view.addSubview(bigView)
+        view.addSubview(smallView)
+        view.addSubview(codeLabel)
+        view.addSubview(pickerView)
+    }
+    
+    func alignInterface() {
+        bigView.align(withSize          : ViewControllerConfig.SizeBigView,
+                      vertical          : .Top,
+                      verticalOffset    : ViewControllerConfig.VerticalOffsetBigView)
+        
+        smallView.align(toFrame         : bigView.frame,
+                        withSize        : ViewControllerConfig.SizeSmallView)
+        
+        pickerView.align(withSize       : ViewControllerConfig.SizePickerView,
+                         vertical       : .Base,
+                         verticalOffset : ViewControllerConfig.VerticalOffsetPickerView)
+        
+        codeLabel.align(toFrame         : pickerView.frame,
+                        withSize        : ViewControllerConfig.SizeCodeLabel,
+                        vertical        : .Above,
+                        verticalOffset  : ViewControllerConfig.VerticalOffsetCodeLabel)
+    }
+    
+    //MARK: - Lazy Loaded Views
+     
+    lazy var bigView: UIView = {
+        var view = UIView(frame : CGRectZero)
+        ...
+        return view
+    }()
+    
+    lazy var smallView: UIView = {
+        var view = UIView(frame : CGRectZero)
+        ...
+        return view
+    }()
+    
+    lazy var pickerView : UIPickerView = {
+        var picker = UIPickerView()
+        ...
+        return picker
+    }()
+    
+    lazy var codeLabel : UILabel = {
+        var label = UILabel()
+        ...
+        return label
+    }()
+} 
+    
+```
 
 
 ##Installation
