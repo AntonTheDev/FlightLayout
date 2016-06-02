@@ -11,10 +11,17 @@ SwiftLayout is a simple layout framework intended to be light weight, and easily
 
 Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply parametric easing to layer properties with out having to ensure that constraints are created, updated, or remade at any point of the animation.
 
+##Demo App
+
+Once you have finished with the documentation below, feel free to the play with the demo app provided as part of this project. Since the scope of the documentation is limited to a handlful of examples, the demo app provides you ability to pick the different options in the method call. Once selected, the app will align a demo view on the screen to it's final position, and provide a the code example to reflect it.
+
 
 ##Basic Use
 
 The UIView Extension within the frame contains the `align` method, when called by a view, the calling view will set it's own frame relatively, as specified by the parameters in the method call . The method containts 6 optional paramaters with assigned defaults, thus creating very poweful and flexible method signature with lots of possibilities. See below for an indepth examples below for definitions of each parameter.
+
+There are two enumerators defined for horizontal and vertical alignment. These are the magic options that allow you to align the calling view relative to another frame.
+
 <br>
 
 
@@ -27,10 +34,7 @@ The UIView Extension within the frame contains the `align` method, when called b
                         verticalOffset   : CGFloat = 0.0)
 ```
 
-There are two enumerators defined for horizontal and vertical alignment. These are the magic options that allow you to align the calling view relative to another frame.
-
-
-When performing animations, there often comes a need to calculate the frame to perform an animation. The following method returns a precalculate the frame based on the method parameters included, without actuially setitng it on the callign view. The `align` method actually this method to calculate it's final value.
+When performing animations, there often comes a need to calculate the frame to perform an animation. The following method returns a precalculate the frame based on the method parameters included, without actuially setitng it on the callign view. The `align` method actually this to calculate it's final value.
 
 
 ```
@@ -42,10 +46,6 @@ When performing animations, there often comes a need to calculate the frame to p
                               verticalOffset   : CGFloat = 0.0) -> CGRect
 
 ```
-
-
-Once you have finished with the documentation below, feel free to the play with the demo app provided as part of this project. Since the scope of the documentation is limited to a handlful of examples, the demo app provides the ability to pick the different options in the method call. Once selected, the app will aligns a demo view on the screen, and also provide a the code example to reflect it.
-
 
 ### Horizontal Alignment
 
