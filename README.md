@@ -158,7 +158,7 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
 Below is a quick example of the alignment logic to setup the demo app, producing the following layout:
 
 
-![alt tag](/Documentation/SimulatorImage.png?raw=true)
+![alt tag](/Documentation/SimulatorImage.png?raw=true width='375' height='667')
 
 
 ```
@@ -209,7 +209,7 @@ class ViewController: UIViewController {
     
     ...................
     
-    Views defined here
+            Views defined here
 } 
     
 ```
@@ -237,7 +237,7 @@ class ViewController: UIViewController {
     
 ####Carthage
 
-The installation instruction below are a for OSX and iOS, follow the extra steps documented when installing for iOS.
+The installation instruction below a OSX for iOS.
 
 #####Installation
 
