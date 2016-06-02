@@ -96,23 +96,18 @@ class ViewController: UIViewController {
      */
     func alignInterface() {
         bigView.align(withSize          : ViewControllerConfig.SizeBigView,
-                      horizontal        : .Center,
                       vertical          : .Top,
                       verticalOffset    : ViewControllerConfig.VerticalOffsetBigView)
         
         smallView.align(toFrame         : bigView.frame,
-                        withSize        : ViewControllerConfig.SizeSmallView,
-                        horizontal      : .Center,
-                        vertical        : .Center)
+                        withSize        : ViewControllerConfig.SizeSmallView)
         
         pickerView.align(withSize       : ViewControllerConfig.SizePickerView,
-                         horizontal     : .Center,
                          vertical       : .Base,
                          verticalOffset : ViewControllerConfig.VerticalOffsetPickerView)
         
         codeLabel.align(toFrame         : pickerView.frame,
                         withSize        : ViewControllerConfig.SizeCodeLabel,
-                        horizontal      : .Center,
                         vertical        : .Above,
                         verticalOffset  : ViewControllerConfig.VerticalOffsetCodeLabel)
     }

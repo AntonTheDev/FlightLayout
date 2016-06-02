@@ -47,7 +47,7 @@ git "https://github.com/AntonTheDev/SwiftLayout.git"
 2. Run `carthage update`. This will fetch dependencies into a [Carthage/Checkouts][] folder, then build each one.
 3. In the application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop each framework for use from the Carthage/Build folder on disk.
 4. Follow the installation instruction above. Once complete, perform the following steps
-(If you have setup a carthage build task for iOS already skip to Step 5) 
+(If you have setup a carthage build task for iOS already skip to Step 6) 
 5. Navigate to the targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase”. Create a Run Script with the following content:
 
   	```
@@ -63,16 +63,12 @@ git "https://github.com/AntonTheDev/SwiftLayout.git"
 
 ##Basic Use
 
-The framework is composed of two extensions. One extension on the UIView, the other on CGRect.
-
-### UIView Extension
-
-The `align` method allows you to align the view in question relatively to another with the flexible option of 6 paramaters, 4 of which are asigned default values, allowing a flexible method signature. See below for an indepth description of each parameter.
+The UIView Extension within the frame contains the `align` method, when called by a view, the calling view will set it's own frame relatively, as specified by the parameters in the method call . The method containts 6 optional paramaters with assigned defaults, thus creating very poweful and flexible method signature with lots of possibilities. See below for an indepth examples below for definitions of each parameter.
 <br>
 
 
-```
-   func align(toFrame  frame             : CGRect = CGRectZero,  
+```   
+   func align(toFrame  frame             : CGRect? = nil,
                withSize size             : CGSize? = nil,        
                         horizontal       : HorizontalAlign,  
                         vertical         : VerticalAlign, 
@@ -80,39 +76,40 @@ The `align` method allows you to align the view in question relatively to anothe
                         verticalOffset   : CGFloat = 0.0)
 ```
 
-#### Horizontal & Vertical Alignment
+There are two enumerators defined for horizontal and vertical alignment. These are the magic options that allow you to align the calling view relative to another frame.
 
-There are two enumerators defined for horizontal and vertical alignment. There are the magic options that allow you to align a view relative to another frame.
+Once you have finished with the documentation below, feel free to the play with the demo app provided as part of this project. Since the scope of the documentation is limited to a handlful of examples, the demo app provides the ability to pick the different options in the method call. Once selected, the app will aligns a demo view on the screen, and also provide a the code example to reflect it.
 
-##### Horizontal
 
-The following are the horizontal options, with illustrations below
+### Horizontal Alignment
+
+The following horizontal options align the calling view on the horizontal plane, with illustrations below
 
 ```
 public enum HorizontalAlign {
     case Left           // Align horizontally to the Left
-    case Right          // Align horizontally to the Right
+    case LeftEdge       // Align horizontally to the Left Edge
     case Center         // Align center.y horizontally
     case RightEdge      // Align horizontally to the Right Edge
-    case LeftEdge       // Align horizontally to the Left Edge
+    case Right          // Align horizontally to the Right
 }
 
 ```
 
 ![alt tag](/Documentation/HorizontalAlignment.png?raw=true)
 
-##### Vertical
+### Vertical Alignment
 
-The following are the vertical options, with illustrations below
+The vertical options align the calling view on the vertical plane, with illustrations below
 
 
 ```
 public enum VerticalAlign {
     case Above          // Align vertically Above
-    case Below          // Align vertically Below
-    case Center         // Align center.y vertically
     case Top            // Align vertically to the top
+    case Center         // Align center.y vertically
     case Base           // Align vertically to the base
+    case Below          // Align vertically Below
 }
 
 ```
@@ -122,7 +119,7 @@ public enum VerticalAlign {
 
 ##### Example 1
 
-Assume you add a new view as a subview, and you want to align it dead center relative to the superview's bounds, it's as easy as the following.
+In the following example, first we add the a new view named **bigView** as a subview, and say you want to align it dead center relative to the superview's bounds. It's as calling align against the view with the following method. This call with align the big **bigView** against the view's bounds that it was added to, with a horizontal, and vertical, alignment of ``.Center``.
 
 
 ```
@@ -136,7 +133,7 @@ Assume you add a new view as a subview, and you want to align it dead center rel
 
 ##### Example 2
 
-The above is the same as below. If the **toFrame** is ommitted, if it automatically assume that you are intending to align against the view's superview.
+The call in Example 1 can also be expressed by ommitting **toFrame** parameter. In the absense of the **toFrame** parameter from the method call, the framework automatically assumes that you are intending to align the calling view against the it's superview's bounds.
 
 ```
    view.addSubview(bigView)
@@ -148,7 +145,7 @@ The above is the same as below. If the **toFrame** is ommitted, if it automatica
 
 ##### Example 3
 
-What if we implemented a sizeToFit method on our view, where it autoresizes itself. We can actually ommit the the **withSize** parameter from the method signature.
+What if we implemented a ``sizeToFit()`` method on our calling view.  In the absense of the **withSize** parameter from the method call, the framework automatically assumes that you are intending to use the current size of the calling view.
 
 ```
    view.addSubview(bigView)
@@ -158,13 +155,38 @@ What if we implemented a sizeToFit method on our view, where it autoresizes itse
                  vertical   : .Center)
 ```
 
-The horizontal alignment  
+###### Example 4
+
+The above example, can also be expressed by ommitting **horizontal** and **vertical** parameters. In the absense of the **horizontal** and **vertical** parameters from the method call, the framework automatically assumes that you are intending to align the calling view's to the center horizontally, and vertically, by defaulting to ``.Center``.
 
 
-##### Horizontal & Vertical Offset
+```
+   view.addSubview(bigView)
+   
+   bigView.sizeToFit()
+   bigView.align()
+   
+```
+
+### Horizontal & Vertical Offset
+
+The **horizontalOffset** and **verticalOffset** parameters adjust the calling view's final frame on the **horizontal** and **vertical** alignment parameters. 
+
+Lets assume we want to center the view and adjust it 20px right, and 20px upward. We can do this by including the **horizontalOffset** and **verticalOffset** and update the offset as follows.
 
 
-##### Precalculated Frame
+```
+   view.addSubview(bigView)
+   
+   bigView.sizeToFit()
+   bigView.align(horizontal : .Center,  
+                 vertical   : .Center,
+                 horizontalOffset : CGFloat = 20.0,
+                 verticalOffset   : CGFloat = -20.0)
+```
+
+
+### Precalculated Frame
 
 . This is helpful when performing animations, and allows the developer to precalculate the frame.
 

@@ -45,8 +45,8 @@ extension UIView {
      */
     func align(toFrame  frame            : CGRect? = nil,
                withSize size             : CGSize? = nil,
-                        horizontal       : HorizontalAlign,
-                        vertical         : VerticalAlign,
+                        horizontal       : HorizontalAlign = .Center,
+                        vertical         : VerticalAlign = .Center,
                         horizontalOffset : CGFloat = 0.0,
                         verticalOffset   : CGFloat = 0.0) {
         
@@ -84,8 +84,8 @@ extension UIView {
      */
     func rectAligned(toFrame  frame            : CGRect?  = nil,
                      withSize size             : CGSize? = nil,
-                              horizontal       : HorizontalAlign,
-                              vertical         : VerticalAlign,
+                              horizontal       : HorizontalAlign = .Center,
+                              vertical         : VerticalAlign = .Center,
                               horizontalOffset : CGFloat = 0.0,
                               verticalOffset   : CGFloat = 0.0) -> CGRect {
         
