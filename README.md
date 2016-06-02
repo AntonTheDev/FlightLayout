@@ -157,7 +157,7 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
 ### Precalculated Frame
 
 
-##Instalation
+##Installation
 
 ####Manual Install
 
