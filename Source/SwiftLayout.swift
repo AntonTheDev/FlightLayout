@@ -25,214 +25,156 @@ public enum HorizontalAlign {
     case LeftEdge       // Align horizontally to the Left Edge
 }
 
-// MARK: - UIView Direct Alignment Extension
+
+// MARK: - UIView Alignment Extension
 
 extension UIView {
     
     /**
-     Aligns the view relative to another view's frame
+     Align self relative to another frame.
      
-     - parameter otherView:        the relative view to align against
-     - parameter horizontal:       the relative horizontal alignment to the other view
-     - parameter vertical:         the relative vertical alignment to the other view
-     - parameter horizontalOffset: the horizontal offset to apply to the relative horizontal alignment
-     - parameter verticalOffset:   the horizontal offset to apply to the relative vertical alignment
-     */
-    func alignToView(otherView          : UIView,
-                     horizontal         : HorizontalAlign,
-                     vertical           : VerticalAlign ,
-                     horizontalOffset   : CGFloat = 0.0,
-                     verticalOffset     : CGFloat = 0.0) {
-        
-        alignWithSize(bounds.size,
-                      toFrame: otherView.frame,
-                      horizontal: horizontal,
-                      vertical: vertical,
-                      horizontalOffset: horizontalOffset,
-                      verticalOffset: verticalOffset)
-    }
-    
-    
-    /**
-     Aligns the view relative to another frame
+     This method calculate a new frame based on the alignment
+     parameters, and sets that frame on self
      
-     - parameter otherFrame:       the relative frame to align against
-     - parameter horizontal:       the relative horizontal alignment to the other view
-     - parameter vertical:         the relative vertical alignment to the other view
-     - parameter horizontalOffset: the horizontal offset to apply to the relative horizontal alignment
-     - parameter verticalOffset:   the horizontal offset to apply to the relative vertical alignment
+     - parameter toFrame:          relative frame to align against. If not assigned, will attempt to use the superview, else defaults to CGRectZero
+     - parameter withSize:         size to set on the calculated frame, defaults to self.bounds.size
+     - parameter horizontal:       horizontal alignment relative to the toView
+     - parameter vertical:         vertical alignment relative to the toView
+     - parameter horizontalOffset: horizontal offset to apply to the calculated relative frame, defautls to 0
+     - parameter verticalOffset:   vertical offset to apply to the calculated relative frame, defautls to 0
      */
-    func alignToFrame(otherFrame       : CGRect,
-                      horizontal       : HorizontalAlign,
-                      vertical         : VerticalAlign,
-                      horizontalOffset : CGFloat = 0.0,
-                      verticalOffset   : CGFloat = 0.0) {
+    func align(toFrame  frame            : CGRect = CGRectZero,
+               withSize size             : CGSize? = nil,
+                        horizontal       : HorizontalAlign,
+                        vertical         : VerticalAlign,
+                        horizontalOffset : CGFloat = 0.0,
+                        verticalOffset   : CGFloat = 0.0) {
         
-        alignWithSize(self.bounds.size,
-                      toFrame: otherFrame,
-                      horizontal: horizontal,
-                      vertical: vertical,
-                      horizontalOffset: horizontalOffset,
-                      verticalOffset: verticalOffset)
-    }
-    
-    
-    /**
-      Aligns the view relative to another frame, and applies the new size in one call.
-      Sometimes, there is a need to set the frame twice, once for bounds, and onces for
-      alignment within another view. Use this methods to apply a size and align the view
-      in a single call
-     
-     - parameter newSize:          new size to apply to the fiew
-     - parameter toFrame:          the relative frame to align against
-     - parameter horizontal:       the relative horizontal alignment to the other view
-     - parameter vertical:         the relative vertical alignment to the other view
-     - parameter horizontalOffset: the horizontal offset to apply to the relative horizontal alignment
-     - parameter verticalOffset:   the horizontal offset to apply to the relative vertical alignment
-     */
-    func alignWithSize(newSize          : CGSize,
-                       toFrame          : CGRect,
-                       horizontal       : HorizontalAlign,
-                       vertical         : VerticalAlign,
-                       horizontalOffset : CGFloat = 0.0,
-                       verticalOffset   : CGFloat = 0.0) {
+        let newRect = rectAligned(toFrame            : frame,
+                                  withSize           : size,
+                                  horizontal         : horizontal,
+                                  vertical           : vertical,
+                                  horizontalOffset   : horizontalOffset,
+                                  verticalOffset     : verticalOffset)
         
-        let newRect = UIView.alignedRectFor(newSize,
-                                         toFrame: toFrame,
-                                         horizontal: horizontal,
-                                         vertical: vertical,
-                                         horizontalOffset: horizontalOffset,
-                                         verticalOffset: verticalOffset)
-
         if CGRectEqualToRect(self.frame, newRect) == false {
             self.frame = newRect
         }
     }
-}
-
-// MARK: - Calculated Return Value Methods
-
-extension UIView {
     
     /**
-     Calculates and returns the frame with a new size relative to the toFrame passed in.
-     This is a handy method in the case that you need to perform animations,
-     and need the final frame calculated prior without updating it.
+     Calculates,vand returns a frame based on the alignment parameters.
      
-     - parameter newSize:          new size to for the calculated frame
-     - parameter toFrame:          the relative frame to calculate and align against
-     - parameter horizontal:       the relative horizontal alignment to the other frame
-     - parameter vertical:         the relative vertical alignment to the other frame
-     - parameter horizontalOffset: the horizontal offset to apply to the relative horizontal alignment
-     - parameter verticalOffset:   the horizontal offset to apply to the relative vertical alignment
+     This is a handy method to use when performing animations, you can ask the view to return
+     the frame it would align to without aligning it self to the returned value.
+     
+     See the CGRect Extension provided with this framework, you can query a CGRect 
+     for it's bounds and center. Since the frame property is not animatable, you 
+     may cancreate an animation group with two separate animations, one for position,
+     and one for hte bounds
+     
+     - parameter toFrame:          relative frame to align against. If not assigned, will attempt to use the superview, else defaults to CGRectZero
+     - parameter withSize:         size to set on the calculated frame, defaults to self.bounds.size
+     - parameter horizontal:       horizontal alignment relative to the toView
+     - parameter vertical:         vertical alignment relative to the toView
+     - parameter horizontalOffset: horizontal offset to apply to the calculated relative frame, defautls to 0
+     - parameter verticalOffset:   vertical offset to apply to the calculated relative frame, defautls to 0
      
      - returns: returns the final aligned frame
      */
-    class func alignedRectFor(newSize          : CGSize,
-                              toFrame          : CGRect,
+    func rectAligned(toFrame  frame            : CGRect  = CGRectZero,
+                     withSize size             : CGSize? = nil,
                               horizontal       : HorizontalAlign,
                               vertical         : VerticalAlign,
                               horizontalOffset : CGFloat = 0.0,
                               verticalOffset   : CGFloat = 0.0) -> CGRect {
         
-        var newRect =  CGRectMake(0,0, newSize.width, newSize.height)
+        var relativeFrame = frame
         
-        newRect.origin.x = alignedHorizontalOriginWithFrame(newRect, dest:toFrame, align : horizontal) + horizontalOffset
-        newRect.origin.y = alignedVerticalOriginWithFrame(newRect, dest:toFrame, align :  vertical) + verticalOffset
+        if CGRectEqualToRect(CGRectZero, frame) {
+            if let superviewFrame = superview?.bounds {
+                relativeFrame = superviewFrame
+            }
+        }
         
-        return newRect
+        var calculatedFrame = self.bounds
+        
+        if let newSize = size {
+            calculatedFrame.size = newSize
+        }
+        
+        calculatedFrame.origin.x = alignedHorizontalOrigin(forRect          : calculatedFrame,
+                                                           relativeToRect   : relativeFrame,
+                                                           withAlignment    : horizontal)
+        
+        calculatedFrame.origin.y = alignedVerticalOrigin(forRect        : calculatedFrame,
+                                                         relativeToRect : relativeFrame,
+                                                         withAlignment  : vertical)
+        
+        calculatedFrame.origin.x += horizontalOffset
+        calculatedFrame.origin.y += verticalOffset
+        
+        return calculatedFrame
     }
-    
+}
+
+
+// MARK: - Private Alignment Calculations Extension
+
+extension UIView {
     
     /**
-     Calculates and returns a new center point relative to the toFrame passed in.
-     
-     - parameter newSize:          new size to for the calculated bounds
-     - parameter toFrame:          the relative frame to calculate and align against
-     - parameter horizontal:       the relative horizontal alignment to the other frame
-     - parameter vertical:         the relative vertical alignment to the other frame
-     - parameter horizontalOffset: the horizontal offset to apply to the relative horizontal alignment
-     - parameter verticalOffset:   the horizontal offset to apply to the relative vertical alignment
-     
-     - returns: center point for the newly calculated frame
+     Private Method. Calculates a horizontally aligned frame for the source frame relative to
+     the destination frame
      */
-    class func alignedPositionFor(newSize          : CGSize,
-                                  toFrame          : CGRect,
-                                  horizontal       : HorizontalAlign,
-                                  vertical         : VerticalAlign,
-                                  horizontalOffset : CGFloat = 0.0,
-                                  verticalOffset   : CGFloat = 0.0) -> CGPoint {
+    final private func alignedHorizontalOrigin(forRect sourceRect      : CGRect,
+                                               relativeToRect toRect   : CGRect,
+                                               withAlignment alignment : HorizontalAlign) -> CGFloat {
         
-        let newRect =  UIView.alignedRectFor(newSize,
-                                             toFrame          : toFrame,
-                                             horizontal       : horizontal,
-                                             vertical         : vertical,
-                                             horizontalOffset : horizontalOffset,
-                                             verticalOffset   : verticalOffset)
+        var origin = sourceRect.origin.x
         
-        return newRect.center()
+        switch (alignment) {
+        case .Left:
+            origin = toRect.origin.x - sourceRect.size.width;
+        case .Right:
+            origin = CGRectGetMaxX(toRect);
+        case .Center:
+            origin = toRect.origin.x + ((toRect.size.width - sourceRect.size.width) / 2.0);
+        case .LeftEdge:
+            origin = toRect.origin.x;
+        case .RightEdge:
+            origin = CGRectGetMaxX(toRect) - sourceRect.size.width;
+        }
+        
+        return round(origin)
     }
-}
-
-
-// MARK: - Calculation Logic Extension
-
-/**
- Calculates a horizontally aligned frame for the source frame relative to
- the destination frame
- 
- - parameter source : source frame
- - parameter dest   : destination frame
- - parameter align  : horizontal alignment to adjust the source frame by
- 
- - returns          : horizontally aligned frame relative to the destination frame
- */
-func alignedHorizontalOriginWithFrame(source : CGRect,  dest : CGRect, align : HorizontalAlign) -> CGFloat {
-    var origin = source.origin.x
     
-    switch (align) {
-    case .Left:
-        origin = dest.origin.x - source.size.width;
-    case .Right:
-        origin = CGRectGetMaxX(dest);
-    case .Center:
-        origin = dest.origin.x + ((dest.size.width - source.size.width) / 2.0);
-    case .LeftEdge:
-        origin = dest.origin.x;
-    case .RightEdge:
-        origin = CGRectGetMaxX(dest) - source.size.width;
+    /**
+     Private Method. Calculates a vertically aligned frame for the source frame relative to
+     the destination frame
+     */
+    final private func alignedVerticalOrigin(forRect sourceRect      : CGRect,
+                                             relativeToRect toRect   : CGRect,
+                                             withAlignment alignment : VerticalAlign) -> CGFloat {
+        var origin = sourceRect.origin.x
+        
+        switch (alignment) {
+        case .Top:
+            origin = toRect.origin.y
+        case .Base:
+            origin = CGRectGetMaxY(toRect) - sourceRect.size.height
+        case .Center:
+            origin = toRect.origin.y + ((toRect.size.height - sourceRect.size.height) / 2.0)
+        case .Above:
+            origin = toRect.origin.y - sourceRect.size.height
+        case .Below:
+            origin = CGRectGetMaxY(toRect)
+        }
+        
+        return round(origin)
     }
-    return round(origin)
 }
 
-
-/**
- Calculates a vertically aligned frame for the source frame relative to
- the destination frame
- 
- - parameter source : source frame
- - parameter dest   : destination frame
- - parameter align  : vertically alignment to adjust the source frame by
- 
- - returns          : vertically aligned frame relative to the destination frame
- */
-func alignedVerticalOriginWithFrame(source : CGRect,  dest : CGRect, align : VerticalAlign) -> CGFloat {
-    var origin = source.origin.x
-    
-    switch (align) {
-    case .Top:
-        origin = dest.origin.y
-    case .Base:
-        origin = CGRectGetMaxY(dest) - source.size.height
-    case .Center:
-        origin = dest.origin.y + ((dest.size.height - source.size.height) / 2.0)
-    case .Above:
-        origin = dest.origin.y - source.size.height
-    case .Below:
-        origin = CGRectGetMaxY(dest)
-    }
-    return round(origin)
-}
 
 // MARK: - CGRect Extension
 
@@ -256,4 +198,3 @@ extension CGRect {
         return CGRectMake(0, 0, self.midX, self.midY)
     }
 }
-

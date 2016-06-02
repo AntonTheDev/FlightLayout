@@ -4,6 +4,9 @@
    <FileRef
       location = "group:SwiftLayout-Demo/SwiftLayout-Demo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SwiftLayout.xcodeproj">
+   </FileRef>
    <Group
       location = "group:"
       name = "Source">
@@ -11,7 +14,4 @@
          location = "group:../Source/SwiftLayout.swift">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:SwiftLayout.xcodeproj">
-   </FileRef>
 </Workspace>
