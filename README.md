@@ -1,6 +1,6 @@
 # SwiftLayout
 
-[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.1.0-blue.svg)]()
+[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.5.0-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
@@ -28,6 +28,21 @@ The UIView Extension within the frame contains the `align` method, when called b
 ```
 
 There are two enumerators defined for horizontal and vertical alignment. These are the magic options that allow you to align the calling view relative to another frame.
+
+
+When performing animations, there often comes a need to calculate the frame to perform an animation. The following method returns a precalculate the frame based on the method parameters included, without actuially setitng it on the callign view. The `align` method actually this method to calculate it's final value.
+
+
+```
+   func rectAligned(toFrame  frame            : CGRect  = CGRectZero,
+                     withSize size             : CGSize? = nil,
+                              horizontal       : HorizontalAlign,
+                              vertical         : VerticalAlign,
+                              horizontalOffset : CGFloat = 0.0,
+                              verticalOffset   : CGFloat = 0.0) -> CGRect
+
+```
+
 
 Once you have finished with the documentation below, feel free to the play with the demo app provided as part of this project. Since the scope of the documentation is limited to a handlful of examples, the demo app provides the ability to pick the different options in the method call. Once selected, the app will aligns a demo view on the screen, and also provide a the code example to reflect it.
 
@@ -81,6 +96,8 @@ In the following example, first we add the a new view named **bigView** as a sub
                  horizontal : .Center,  
                  vertical   : .Center)
 ```
+
+Note: In the case that the calculated frame is the same as the calling views frame, it will not actually set the frame on the caller, it will just exit it. This helps avoid glitches for animations, i.e  setitng the frame on the view that is currently animating, will flicker the view to it's final position.
 
 ##### Example 2
 
@@ -138,25 +155,6 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
 
 
 ### Precalculated Frame
-
-The following is a helper method that is helpful when performing animations, and allows the developer to precalculate the frame. To it's final desticantion
-
-
-```
-   func rectAligned(toFrame  frame            : CGRect  = CGRectZero,
-                     withSize size             : CGSize? = nil,
-                              horizontal       : HorizontalAlign,
-                              vertical         : VerticalAlign,
-                              horizontalOffset : CGFloat = 0.0,
-                              verticalOffset   : CGFloat = 0.0) -> CGRect
-
-```
-
-
-### CGRect Extension
-
-The 
-
 
 
 ##Instalation

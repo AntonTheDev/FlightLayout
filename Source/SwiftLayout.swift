@@ -180,27 +180,3 @@ extension UIView {
         return round(origin)
     }
 }
-
-
-// MARK: - CGRect Extension
-
-extension CGRect {
-    
-    /**
-     Returns the frame's center position
-     
-     - returns: center of the rect
-     */
-    func center() -> CGPoint {
-        return CGPointMake(self.midX, self.midY)
-    }
-    
-    /**
-     Returns the bounds value, with a CGPointZero origin
-     
-     - returns: bounds for the rect
-     */
-    func bounds() -> CGRect {
-        return CGRectMake(0, 0, self.midX, self.midY)
-    }
-}
