@@ -11,7 +11,7 @@
 		131720571CF6D74B0032B64D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131720561CF6D74B0032B64D /* ViewController.swift */; };
 		1317205C1CF6D74B0032B64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1317205B1CF6D74B0032B64D /* Assets.xcassets */; };
 		1317205F1CF6D74B0032B64D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1317205D1CF6D74B0032B64D /* LaunchScreen.storyboard */; };
-		131720691CF6D9420032B64D /* SwiftLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131720681CF6D9420032B64D /* SwiftLayout.swift */; };
+		131720691CF6D9420032B64D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131720681CF6D9420032B64D /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		1317205B1CF6D74B0032B64D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1317205E1CF6D74B0032B64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		131720601CF6D74B0032B64D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		131720681CF6D9420032B64D /* SwiftLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftLayout.swift; path = ../../../Source/SwiftLayout.swift; sourceTree = "<group>"; };
+		131720681CF6D9420032B64D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../../Source/UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 		1317206A1CF6D9490032B64D /* SwiftLayout */ = {
 			isa = PBXGroup;
 			children = (
-				131720681CF6D9420032B64D /* SwiftLayout.swift */,
+				131720681CF6D9420032B64D /* UIView+Layout.swift */,
 			);
 			name = SwiftLayout;
 			sourceTree = "<group>";
@@ -159,7 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131720571CF6D74B0032B64D /* ViewController.swift in Sources */,
-				131720691CF6D9420032B64D /* SwiftLayout.swift in Sources */,
+				131720691CF6D9420032B64D /* UIView+Layout.swift in Sources */,
 				131720551CF6D74B0032B64D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

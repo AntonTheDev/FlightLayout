@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136B00AC1D59380100065EC9 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136B00AB1D59380100065EC9 /* UIView+Layout.swift */; };
+		136B00AD1D59380100065EC9 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136B00AB1D59380100065EC9 /* UIView+Layout.swift */; };
 		1374273F1CF6070D000FCEA7 /* SwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1374273E1CF6070D000FCEA7 /* SwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		137427461CF6070D000FCEA7 /* SwiftLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1374273B1CF6070D000FCEA7 /* SwiftLayout.framework */; };
 		1374274B1CF6070D000FCEA7 /* SwiftLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374274A1CF6070D000FCEA7 /* SwiftLayoutTests.swift */; };
@@ -23,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		136B00AB1D59380100065EC9 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		1374273B1CF6070D000FCEA7 /* SwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1374273E1CF6070D000FCEA7 /* SwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftLayout.h; sourceTree = "<group>"; };
 		137427401CF6070D000FCEA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		1374273D1CF6070D000FCEA7 /* SwiftLayout */ = {
 			isa = PBXGroup;
 			children = (
+				136B00AB1D59380100065EC9 /* UIView+Layout.swift */,
 				1374273E1CF6070D000FCEA7 /* SwiftLayout.h */,
 				137427401CF6070D000FCEA7 /* Info.plist */,
 			);
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136B00AC1D59380100065EC9 /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136B00AD1D59380100065EC9 /* UIView+Layout.swift in Sources */,
 				1374274B1CF6070D000FCEA7 /* SwiftLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
