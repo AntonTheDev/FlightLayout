@@ -28,7 +28,7 @@ public enum HorizontalAlign {
 
 // MARK: - UIView Alignment Extension
 
-extension UIView {
+public extension UIView {
     
     /**
      Align self relative to another frame.
