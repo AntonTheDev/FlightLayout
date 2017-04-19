@@ -10,7 +10,7 @@
 1. Edit the project's podfile, and save
 
 ```
-    pod 'FlightLayout', :git => 'https://github.com/AntonTheDev/FlightLayout.git', :tag => '0.7'
+    pod 'FlightLayout', :git => 'https://github.com/AntonTheDev/FlightLayout.git', :tag => '0.7.1'
 ```
 2. Install FlightLayout by running
 
@@ -28,7 +28,7 @@ The installation instruction below for iOS.
 	
 ```
     # FlightLayout
-    git "https://github.com/AntonTheDev/FlightLayout.git" >= 0.7
+    git "https://github.com/AntonTheDev/FlightLayout.git" >= 0.7.1
 
 ```
 
