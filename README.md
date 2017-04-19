@@ -1,6 +1,6 @@
 # FlightLayout
 
-[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.7.0-blue.svg)]()
+[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.7.1-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
@@ -9,7 +9,7 @@
 
 ## Introduction
 
-FlightLayout is a light weight, and easily layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
+FlightLayout is a light weight, and easy to learn layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
 
 Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply animations without the hasstle of disabling constraints to perform parametric animations to a layer's properties.
 
@@ -27,7 +27,7 @@ An example of how the view controller is layed out in the demo app is can be fou
 
 ## Basic Use
 
-The UIView Extension within the frame contains the `align` method, when called by a view, the calling view will set it's own frame relatively, as specified by the parameters in the method call . The method containts 6 optional paramaters with assigned defaults, thus creating very poweful and flexible method signature with lots of possibilities. See below for an indepth examples below for definitions of each parameter.
+The UIView Extension which contains the `align` method, when called by a view, the calling view will set it's own frame relatively, as specified by the parameters in the method call . The method containts 6 optional paramaters with assigned defaults, thus creating very poweful and flexible method signature with lots of possibilities. See below for an indepth examples below for definitions of each parameter.
 
 There are two enumerators defined for horizontal and vertical alignment. These are the magic options that allow you to align the calling view relative to another frame.
 
