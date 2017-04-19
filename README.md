@@ -5,6 +5,8 @@
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
 
+![alt tag](/Documentation/FlightLayout.jpg?raw=true)
+
 ## Introduction
 
 FlightLayout is a light weight, and easily layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
