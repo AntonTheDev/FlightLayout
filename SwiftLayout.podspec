@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftLayout"
-  s.version      = "0.1.0"
-  s.summary      = "An alternative layout framework that does not rely on AutoLayout"
+  s.version      = "0.7"
+  s.summary      = "Yet another alternative to AutoLayout. Makes a perfect companion for FlightAnimator"
   s.homepage     = "https://github.com/AntonTheDev/SwiftLayout"
   s.license      = 'MIT'
   s.author       = { "Anton Doudarev" => "antonthedev@gmail.com" }

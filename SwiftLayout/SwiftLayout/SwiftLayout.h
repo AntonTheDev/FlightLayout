@@ -2,8 +2,8 @@
 //  SwiftLayout.h
 //  SwiftLayout
 //
-//  Created by Anton Doudarev on 5/25/16.
-//  Copyright © 2016 Anton Doudarev. All rights reserved.
+//  Created by Anton on 4/18/17.
+//  Copyright © 2017 Anton Doudarev. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

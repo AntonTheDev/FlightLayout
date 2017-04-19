@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1374273A1CF6070D000FCEA7"
+               BlueprintIdentifier = "3A2A62F11EA71657009949DF"
                BuildableName = "SwiftLayout.framework"
                BlueprintName = "SwiftLayout"
                ReferencedContainer = "container:SwiftLayout.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "137427441CF6070D000FCEA7"
+               BlueprintIdentifier = "3A2A62FA1EA71657009949DF"
                BuildableName = "SwiftLayoutTests.xctest"
                BlueprintName = "SwiftLayoutTests"
                ReferencedContainer = "container:SwiftLayout.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1374273A1CF6070D000FCEA7"
+            BlueprintIdentifier = "3A2A62F11EA71657009949DF"
             BuildableName = "SwiftLayout.framework"
             BlueprintName = "SwiftLayout"
             ReferencedContainer = "container:SwiftLayout.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1374273A1CF6070D000FCEA7"
+            BlueprintIdentifier = "3A2A62F11EA71657009949DF"
             BuildableName = "SwiftLayout.framework"
             BlueprintName = "SwiftLayout"
             ReferencedContainer = "container:SwiftLayout.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1374273A1CF6070D000FCEA7"
+            BlueprintIdentifier = "3A2A62F11EA71657009949DF"
             BuildableName = "SwiftLayout.framework"
             BlueprintName = "SwiftLayout"
             ReferencedContainer = "container:SwiftLayout.xcodeproj">

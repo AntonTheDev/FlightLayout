@@ -1,20 +1,17 @@
 # SwiftLayout
 
-[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.5.1-blue.svg)]()
+[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.7.0-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
 
+## Introduction
 
-![alt tag](/Documentation/SwiftLayoutBanner.png?raw=true)
+SwiftLayout is a light weight, and easily layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
 
-##Introduction
+Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply animations without hte hasstle of disabling constraints to perform parametric animations to a layer's properties.
 
-SwiftLayout is a simple layout framework intended to be light weight, and easily readable, which a concise approach to laying out user interface elements. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
-
-Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply parametric easing to layer properties with out having to ensure that constraints are created, updated, or remade at any point of the animation.
-
-##Demo
+## Demo
 
 Since the scope of the documentation is limited to a handlful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project. 
 
@@ -22,11 +19,11 @@ The demo app provides the ability to pick different options in the method call, 
 
 An example of how the view controller is layed out in the demo app is can be found [here](/Documentation/demo.md)
 
-##Installation
+## Installation
 
 * [Installation Documentation](/Documentation/installation.md)
 
-##Basic Use
+## Basic Use
 
 The UIView Extension within the frame contains the `align` method, when called by a view, the calling view will set it's own frame relatively, as specified by the parameters in the method call . The method containts 6 optional paramaters with assigned defaults, thus creating very poweful and flexible method signature with lots of possibilities. See below for an indepth examples below for definitions of each parameter.
 
@@ -48,7 +45,7 @@ When performing animations, there often comes a need to calculate the frame to p
 
 
 ```
-   func rectAligned(toFrame  frame            : CGRect  = CGRectZero,
+   func rectAligned(toFrame frame              : CGRect  = CGRectZero,
                      withSize size             : CGSize? = nil,
                               horizontal       : HorizontalAlign,
                               vertical         : VerticalAlign,
@@ -63,11 +60,11 @@ The following horizontal options align the calling view on the horizontal plane,
 
 ```
 public enum HorizontalAlign {
-    case Left           // Align horizontally to the Left
-    case LeftEdge       // Align horizontally to the Left Edge
-    case Center         // Align center.y horizontally
-    case RightEdge      // Align horizontally to the Right Edge
-    case Right          // Align horizontally to the Right
+    case left           // Align horizontally to the Left
+    case leftEdge       // Align horizontally to the Left Edge
+    case center         // Align center.y horizontally
+    case rightEdge      // Align horizontally to the Right Edge
+    case right          // Align horizontally to the Right
 }
 
 ```
@@ -81,11 +78,11 @@ The vertical options align the calling view on the vertical plane, with illustra
 
 ```
 public enum VerticalAlign {
-    case Above          // Align vertically Above
-    case Top            // Align vertically to the top
-    case Center         // Align center.y vertically
-    case Base           // Align vertically to the base
-    case Below          // Align vertically Below
+    case above          // Align vertically Above
+    case top            // Align vertically to the top
+    case center         // Align center.y vertically
+    case base           // Align vertically to the base
+    case below          // Align vertically Below
 }
 
 ```
@@ -102,9 +99,9 @@ In the following example, first we add the a new view named **bigView** as a sub
    view.addSubview(bigView)
 
    bigView.align(toFrame    : view.bounds,     
-   			     withSize   : CGSizeMake(140, 140),        
-                 horizontal : .Center,  
-                 vertical   : .Center)
+   			     withSize   : CGSize(width : 140.0, height : 140.0),        
+                 horizontal : .center,  
+                 vertical   : .center)
 ```
 
 Note: In the case that the calculated frame is the same as the calling views frame, it will not actually set the frame on the caller, it will just exit. This helps avoid glitches during animations, i.e  setting the frame on the view that is currently animating, will flicker the view to it's final position.
@@ -116,9 +113,9 @@ The call in Example 1 can also be expressed by ommitting **toFrame** parameter. 
 ```
    view.addSubview(bigView)
 
-   bigView.align(withSize   : CGSizeMake(140, 140),        
-                 horizontal : .Center,  
-                 vertical   : .Center)
+   bigView.align(withSize   : CGSize(width : 140.0, height : 140.0),        
+                 horizontal : .center,  
+                 vertical   : .center)
 ```
 
 ##### Example 3
@@ -129,8 +126,8 @@ What if we implemented a ``sizeToFit()`` method on our calling view.  In the abs
    view.addSubview(bigView)
    
    bigView.sizeToFit()
-   bigView.align(horizontal : .Center,  
-                 vertical   : .Center)
+   bigView.align(horizontal : .center,  
+                 vertical   : .center)
 ```
 
 ###### Example 4
@@ -157,10 +154,10 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
    view.addSubview(bigView)
    
    bigView.sizeToFit()
-   bigView.align(horizontal : .Center,  
-                 vertical   : .Center,
-                 horizontalOffset : CGFloat = 20.0,
-                 verticalOffset   : CGFloat = -20.0)
+   bigView.align(horizontal : .center,  
+                 vertical   : .center,
+                 horizontalOffset : 20.0,
+                 verticalOffset   : -20.0)
 ```
 
 ## License

@@ -11,7 +11,7 @@
 		131720571CF6D74B0032B64D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131720561CF6D74B0032B64D /* ViewController.swift */; };
 		1317205C1CF6D74B0032B64D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1317205B1CF6D74B0032B64D /* Assets.xcassets */; };
 		1317205F1CF6D74B0032B64D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1317205D1CF6D74B0032B64D /* LaunchScreen.storyboard */; };
-		131720691CF6D9420032B64D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131720681CF6D9420032B64D /* UIView+Layout.swift */; };
+		3A2A63111EA71836009949DF /* SwiftLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A63101EA71836009949DF /* SwiftLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		1317205B1CF6D74B0032B64D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1317205E1CF6D74B0032B64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		131720601CF6D74B0032B64D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		131720681CF6D9420032B64D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../../Source/UIView+Layout.swift"; sourceTree = "<group>"; };
+		3A2A63101EA71836009949DF /* SwiftLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +54,8 @@
 		131720531CF6D74B0032B64D /* SwiftLayout-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3A2A630F1EA71836009949DF /* Source */,
 				131720561CF6D74B0032B64D /* ViewController.swift */,
-				1317206A1CF6D9490032B64D /* SwiftLayout */,
 				131720671CF6D7930032B64D /* Application */,
 				131720661CF6D7850032B64D /* Supporting Files */,
 			);
@@ -80,12 +80,13 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
-		1317206A1CF6D9490032B64D /* SwiftLayout */ = {
+		3A2A630F1EA71836009949DF /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				131720681CF6D9420032B64D /* UIView+Layout.swift */,
+				3A2A63101EA71836009949DF /* SwiftLayout.swift */,
 			);
-			name = SwiftLayout;
+			name = Source;
+			path = ../../Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,11 +116,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Anton Doudarev";
 				TargetAttributes = {
 					131720501CF6D74B0032B64D = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = WQAUP4LZJV;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -159,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				131720571CF6D74B0032B64D /* ViewController.swift in Sources */,
-				131720691CF6D9420032B64D /* UIView+Layout.swift in Sources */,
+				3A2A63111EA71836009949DF /* SwiftLayout.swift in Sources */,
 				131720551CF6D74B0032B64D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,8 +195,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -237,8 +242,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -257,6 +264,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -265,10 +273,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "SwiftLayout-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iagd.swiftlayout-demo.SwiftLayout-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -276,10 +288,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "SwiftLayout-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.iagd.swiftlayout-demo.SwiftLayout-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
