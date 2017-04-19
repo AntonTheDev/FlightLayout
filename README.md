@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
 
-![alt tag](/Documentation/FlightLayoutBanner.png?raw=true)
+![alt tag](/Documentation/FlightLayout.png?raw=true)
 
 ## Introduction
 
