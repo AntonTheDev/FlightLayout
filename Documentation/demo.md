@@ -3,7 +3,7 @@
 Below is a quick example of the alignment logic setup in the demo app provided with the application, producing the following layout:
 
 <p align="center">
-<img align="center"  src="https://github.com/AntonTheDev/SwiftLayout/blob/master/Documentation/SimulatorImage.png?raw=true" width="375" height="667" />
+<img align="center"  src="https://github.com/AntonTheDev/FlightLayout/blob/master/Documentation/SimulatorImage.png?raw=true" width="375" height="667" />
 </p>
 
 ```

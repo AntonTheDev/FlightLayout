@@ -1,4 +1,4 @@
-# SwiftLayout
+# FlightLayout
 
 [![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.7.0-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
@@ -7,9 +7,9 @@
 
 ## Introduction
 
-SwiftLayout is a light weight, and easily layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
+FlightLayout is a light weight, and easily layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
 
-Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply animations without hte hasstle of disabling constraints to perform parametric animations to a layer's properties.
+Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply animations without the hasstle of disabling constraints to perform parametric animations to a layer's properties.
 
 ## Demo
 

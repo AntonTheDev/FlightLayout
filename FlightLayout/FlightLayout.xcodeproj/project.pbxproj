@@ -7,92 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A2A62FC1EA71657009949DF /* SwiftLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A62F21EA71657009949DF /* SwiftLayout.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3A2A63011EA71657009949DF /* SwiftLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A63001EA71657009949DF /* SwiftLayoutTests.swift */; };
-		3A2A63031EA71657009949DF /* SwiftLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2A62F51EA71657009949DF /* SwiftLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A2A630E1EA7167B009949DF /* SwiftLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A630D1EA7167B009949DF /* SwiftLayout.swift */; };
+		3A2A63301EA733A4009949DF /* FlightLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A63261EA733A4009949DF /* FlightLayout.framework */; };
+		3A2A63351EA733A4009949DF /* FlightLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A63341EA733A4009949DF /* FlightLayoutTests.swift */; };
+		3A2A63371EA733A4009949DF /* FlightLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2A63291EA733A4009949DF /* FlightLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A2A636E1EA733F1009949DF /* FlightLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A636D1EA733F1009949DF /* FlightLayout.swift */; };
+		3A2A636F1EA733F1009949DF /* FlightLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A636D1EA733F1009949DF /* FlightLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A2A62FD1EA71657009949DF /* PBXContainerItemProxy */ = {
+		3A2A63311EA733A4009949DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3A2A62E91EA71657009949DF /* Project object */;
+			containerPortal = 3A2A631D1EA733A4009949DF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3A2A62F11EA71657009949DF;
-			remoteInfo = SwiftLayout;
+			remoteGlobalIDString = 3A2A63251EA733A4009949DF;
+			remoteInfo = FlightLayout;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A2A62F21EA71657009949DF /* SwiftLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A2A62F51EA71657009949DF /* SwiftLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftLayout.h; sourceTree = "<group>"; };
-		3A2A62F61EA71657009949DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A2A62FB1EA71657009949DF /* SwiftLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A2A63001EA71657009949DF /* SwiftLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLayoutTests.swift; sourceTree = "<group>"; };
-		3A2A63021EA71657009949DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A2A630D1EA7167B009949DF /* SwiftLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLayout.swift; sourceTree = "<group>"; };
+		3A2A63261EA733A4009949DF /* FlightLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlightLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2A63291EA733A4009949DF /* FlightLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightLayout.h; sourceTree = "<group>"; };
+		3A2A632A1EA733A4009949DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A2A632F1EA733A4009949DF /* FlightLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A2A63341EA733A4009949DF /* FlightLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLayoutTests.swift; sourceTree = "<group>"; };
+		3A2A63361EA733A4009949DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A2A636D1EA733F1009949DF /* FlightLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3A2A62EE1EA71657009949DF /* Frameworks */ = {
+		3A2A63221EA733A4009949DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A2A62F81EA71657009949DF /* Frameworks */ = {
+		3A2A632C1EA733A4009949DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2A62FC1EA71657009949DF /* SwiftLayout.framework in Frameworks */,
+				3A2A63301EA733A4009949DF /* FlightLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A2A62E81EA71657009949DF = {
+		3A2A631C1EA733A4009949DF = {
 			isa = PBXGroup;
 			children = (
-				3A2A62F41EA71657009949DF /* SwiftLayout */,
-				3A2A62FF1EA71657009949DF /* SwiftLayoutTests */,
-				3A2A62F31EA71657009949DF /* Products */,
+				3A2A63281EA733A4009949DF /* FlightLayout */,
+				3A2A63331EA733A4009949DF /* FlightLayoutTests */,
+				3A2A63271EA733A4009949DF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3A2A62F31EA71657009949DF /* Products */ = {
+		3A2A63271EA733A4009949DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A2A62F21EA71657009949DF /* SwiftLayout.framework */,
-				3A2A62FB1EA71657009949DF /* SwiftLayoutTests.xctest */,
+				3A2A63261EA733A4009949DF /* FlightLayout.framework */,
+				3A2A632F1EA733A4009949DF /* FlightLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3A2A62F41EA71657009949DF /* SwiftLayout */ = {
+		3A2A63281EA733A4009949DF /* FlightLayout */ = {
 			isa = PBXGroup;
 			children = (
-				3A2A630C1EA7167B009949DF /* Source */,
-				3A2A62F51EA71657009949DF /* SwiftLayout.h */,
-				3A2A62F61EA71657009949DF /* Info.plist */,
+				3A2A63291EA733A4009949DF /* FlightLayout.h */,
+				3A2A636C1EA733F1009949DF /* Source */,
+				3A2A632A1EA733A4009949DF /* Info.plist */,
 			);
-			path = SwiftLayout;
+			path = FlightLayout;
 			sourceTree = "<group>";
 		};
-		3A2A62FF1EA71657009949DF /* SwiftLayoutTests */ = {
+		3A2A63331EA733A4009949DF /* FlightLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A2A63001EA71657009949DF /* SwiftLayoutTests.swift */,
-				3A2A63021EA71657009949DF /* Info.plist */,
+				3A2A63341EA733A4009949DF /* FlightLayoutTests.swift */,
+				3A2A63361EA733A4009949DF /* Info.plist */,
 			);
-			path = SwiftLayoutTests;
+			path = FlightLayoutTests;
 			sourceTree = "<group>";
 		};
-		3A2A630C1EA7167B009949DF /* Source */ = {
+		3A2A636C1EA733F1009949DF /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3A2A630D1EA7167B009949DF /* SwiftLayout.swift */,
+				3A2A636D1EA733F1009949DF /* FlightLayout.swift */,
 			);
 			name = Source;
 			path = ../../Source;
@@ -101,102 +102,102 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3A2A62EF1EA71657009949DF /* Headers */ = {
+		3A2A63231EA733A4009949DF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2A63031EA71657009949DF /* SwiftLayout.h in Headers */,
+				3A2A63371EA733A4009949DF /* FlightLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3A2A62F11EA71657009949DF /* SwiftLayout */ = {
+		3A2A63251EA733A4009949DF /* FlightLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A2A63061EA71657009949DF /* Build configuration list for PBXNativeTarget "SwiftLayout" */;
+			buildConfigurationList = 3A2A633A1EA733A4009949DF /* Build configuration list for PBXNativeTarget "FlightLayout" */;
 			buildPhases = (
-				3A2A62ED1EA71657009949DF /* Sources */,
-				3A2A62EE1EA71657009949DF /* Frameworks */,
-				3A2A62EF1EA71657009949DF /* Headers */,
-				3A2A62F01EA71657009949DF /* Resources */,
+				3A2A63211EA733A4009949DF /* Sources */,
+				3A2A63221EA733A4009949DF /* Frameworks */,
+				3A2A63231EA733A4009949DF /* Headers */,
+				3A2A63241EA733A4009949DF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftLayout;
-			productName = SwiftLayout;
-			productReference = 3A2A62F21EA71657009949DF /* SwiftLayout.framework */;
+			name = FlightLayout;
+			productName = FlightLayout;
+			productReference = 3A2A63261EA733A4009949DF /* FlightLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3A2A62FA1EA71657009949DF /* SwiftLayoutTests */ = {
+		3A2A632E1EA733A4009949DF /* FlightLayoutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A2A63091EA71657009949DF /* Build configuration list for PBXNativeTarget "SwiftLayoutTests" */;
+			buildConfigurationList = 3A2A633D1EA733A4009949DF /* Build configuration list for PBXNativeTarget "FlightLayoutTests" */;
 			buildPhases = (
-				3A2A62F71EA71657009949DF /* Sources */,
-				3A2A62F81EA71657009949DF /* Frameworks */,
-				3A2A62F91EA71657009949DF /* Resources */,
+				3A2A632B1EA733A4009949DF /* Sources */,
+				3A2A632C1EA733A4009949DF /* Frameworks */,
+				3A2A632D1EA733A4009949DF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3A2A62FE1EA71657009949DF /* PBXTargetDependency */,
+				3A2A63321EA733A4009949DF /* PBXTargetDependency */,
 			);
-			name = SwiftLayoutTests;
-			productName = SwiftLayoutTests;
-			productReference = 3A2A62FB1EA71657009949DF /* SwiftLayoutTests.xctest */;
+			name = FlightLayoutTests;
+			productName = FlightLayoutTests;
+			productReference = 3A2A632F1EA733A4009949DF /* FlightLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3A2A62E91EA71657009949DF /* Project object */ = {
+		3A2A631D1EA733A4009949DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Anton Doudarev";
 				TargetAttributes = {
-					3A2A62F11EA71657009949DF = {
+					3A2A63251EA733A4009949DF = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = WQAUP4LZJV;
 						ProvisioningStyle = Automatic;
 					};
-					3A2A62FA1EA71657009949DF = {
+					3A2A632E1EA733A4009949DF = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = WQAUP4LZJV;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 3A2A62EC1EA71657009949DF /* Build configuration list for PBXProject "SwiftLayout" */;
+			buildConfigurationList = 3A2A63201EA733A4009949DF /* Build configuration list for PBXProject "FlightLayout" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 3A2A62E81EA71657009949DF;
-			productRefGroup = 3A2A62F31EA71657009949DF /* Products */;
+			mainGroup = 3A2A631C1EA733A4009949DF;
+			productRefGroup = 3A2A63271EA733A4009949DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A2A62F11EA71657009949DF /* SwiftLayout */,
-				3A2A62FA1EA71657009949DF /* SwiftLayoutTests */,
+				3A2A63251EA733A4009949DF /* FlightLayout */,
+				3A2A632E1EA733A4009949DF /* FlightLayoutTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3A2A62F01EA71657009949DF /* Resources */ = {
+		3A2A63241EA733A4009949DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A2A62F91EA71657009949DF /* Resources */ = {
+		3A2A632D1EA733A4009949DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,34 +207,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3A2A62ED1EA71657009949DF /* Sources */ = {
+		3A2A63211EA733A4009949DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2A630E1EA7167B009949DF /* SwiftLayout.swift in Sources */,
+				3A2A636E1EA733F1009949DF /* FlightLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A2A62F71EA71657009949DF /* Sources */ = {
+		3A2A632B1EA733A4009949DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2A63011EA71657009949DF /* SwiftLayoutTests.swift in Sources */,
+				3A2A63351EA733A4009949DF /* FlightLayoutTests.swift in Sources */,
+				3A2A636F1EA733F1009949DF /* FlightLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3A2A62FE1EA71657009949DF /* PBXTargetDependency */ = {
+		3A2A63321EA733A4009949DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A2A62F11EA71657009949DF /* SwiftLayout */;
-			targetProxy = 3A2A62FD1EA71657009949DF /* PBXContainerItemProxy */;
+			target = 3A2A63251EA733A4009949DF /* FlightLayout */;
+			targetProxy = 3A2A63311EA733A4009949DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3A2A63041EA71657009949DF /* Debug */ = {
+		3A2A63381EA733A4009949DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,7 +277,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -287,7 +289,7 @@
 			};
 			name = Debug;
 		};
-		3A2A63051EA71657009949DF /* Release */ = {
+		3A2A63391EA733A4009949DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -323,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -334,7 +336,7 @@
 			};
 			name = Release;
 		};
-		3A2A63071EA71657009949DF /* Debug */ = {
+		3A2A633B1EA733A4009949DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -343,17 +345,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftLayout/Info.plist;
+				INFOPLIST_FILE = FlightLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.swiftlayout.SwiftLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.flightlayout.FlightLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		3A2A63081EA71657009949DF /* Release */ = {
+		3A2A633C1EA733A4009949DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -362,37 +364,37 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftLayout/Info.plist;
+				INFOPLIST_FILE = FlightLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.swiftlayout.SwiftLayout;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.flightlayout.FlightLayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		3A2A630A1EA71657009949DF /* Debug */ = {
+		3A2A633E1EA733A4009949DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WQAUP4LZJV;
-				INFOPLIST_FILE = SwiftLayoutTests/Info.plist;
+				INFOPLIST_FILE = FlightLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.swiftlayout.SwiftLayoutTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.flightlayout.FlightLayoutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		3A2A630B1EA71657009949DF /* Release */ = {
+		3A2A633F1EA733A4009949DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WQAUP4LZJV;
-				INFOPLIST_FILE = SwiftLayoutTests/Info.plist;
+				INFOPLIST_FILE = FlightLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.swiftlayout.SwiftLayoutTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iagd.flightlayout.FlightLayoutTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -401,34 +403,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A2A62EC1EA71657009949DF /* Build configuration list for PBXProject "SwiftLayout" */ = {
+		3A2A63201EA733A4009949DF /* Build configuration list for PBXProject "FlightLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A2A63041EA71657009949DF /* Debug */,
-				3A2A63051EA71657009949DF /* Release */,
+				3A2A63381EA733A4009949DF /* Debug */,
+				3A2A63391EA733A4009949DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A2A63061EA71657009949DF /* Build configuration list for PBXNativeTarget "SwiftLayout" */ = {
+		3A2A633A1EA733A4009949DF /* Build configuration list for PBXNativeTarget "FlightLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A2A63071EA71657009949DF /* Debug */,
-				3A2A63081EA71657009949DF /* Release */,
+				3A2A633B1EA733A4009949DF /* Debug */,
+				3A2A633C1EA733A4009949DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A2A63091EA71657009949DF /* Build configuration list for PBXNativeTarget "SwiftLayoutTests" */ = {
+		3A2A633D1EA733A4009949DF /* Build configuration list for PBXNativeTarget "FlightLayoutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A2A630A1EA71657009949DF /* Debug */,
-				3A2A630B1EA71657009949DF /* Release */,
+				3A2A633E1EA733A4009949DF /* Debug */,
+				3A2A633F1EA733A4009949DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3A2A62E91EA71657009949DF /* Project object */;
+	rootObject = 3A2A631D1EA733A4009949DF /* Project object */;
 }

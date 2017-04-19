@@ -1,15 +1,15 @@
 //
-//  SwiftLayoutTests.swift
-//  SwiftLayoutTests
+//  FlightLayout_DemoTests.swift
+//  FlightLayout-DemoTests
 //
-//  Created by Anton on 4/18/17.
+//  Created by Anton on 4/19/17.
 //  Copyright © 2017 Anton Doudarev. All rights reserved.
 //
 
 import XCTest
-@testable import SwiftLayout
+@testable import FlightLayout_Demo
 
-class SwiftLayoutTests: XCTestCase {
+class FlightLayout_DemoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

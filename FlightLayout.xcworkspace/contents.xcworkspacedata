@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SwiftLayout-Demo/SwiftLayout-Demo.xcodeproj">
+      location = "group:FlightLayout-Demo/FlightLayout-Demo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SwiftLayout/SwiftLayout.xcodeproj">
+      location = "group:FlightLayout/FlightLayout.xcodeproj">
    </FileRef>
 </Workspace>

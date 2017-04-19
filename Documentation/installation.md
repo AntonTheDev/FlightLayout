@@ -2,7 +2,7 @@
 
 ### Manual Install
 
-1. Clone the [SwiftLayout](git@github.com:AntonTheDev/SwiftLayout.git) repository 
+1. Clone the [FlightLayout](git@github.com:AntonTheDev/FlightLayout.git) repository 
 2. Add the contents of the Source Directory to the project
 
 ### CocoaPods
@@ -10,9 +10,9 @@
 1. Edit the project's podfile, and save
 
 ```
-    pod 'SwiftLayout', :git => 'https://github.com/AntonTheDev/SwiftLayout.git', :tag => '0.7'
+    pod 'FlightLayout', :git => 'https://github.com/AntonTheDev/FlightLayout.git', :tag => '0.7'
 ```
-2. Install SwiftLayout by running
+2. Install FlightLayout by running
 
 ```
     pod install
@@ -27,8 +27,8 @@ The installation instruction below for iOS.
 1. Create/Update the Cartfile with with the following
 	
 ```
-    # SwiftLayout
-    git "https://github.com/AntonTheDev/SwiftLayout.git" >= 0.7
+    # FlightLayout
+    git "https://github.com/AntonTheDev/FlightLayout.git" >= 0.7
 
 ```
 
@@ -45,5 +45,5 @@ The installation instruction below for iOS.
 6. Add the paths to the frameworks you want to use under “Input Files” within the carthage build phase as follows e.g.:
 
 ```
-    $(SRCROOT)/Carthage/Build/iOS/SwiftLayout.framework	
+    $(SRCROOT)/Carthage/Build/iOS/FlightLayout.framework	
 ```
