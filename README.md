@@ -9,17 +9,17 @@
 
 ## Introduction
 
-FlightLayout is a light weight, and easy to learn layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic contstraint approach.
+FlightLayout is a light weight, and easy to learn layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic constraint approach.
 
-Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply animations without the hasstle of disabling constraints to perform parametric animations to a layer's properties.
+Some use cases for this framework include the ability to animate views with core animation. Without the overhead of Autolayout's constraints system, we are free to apply animations without the hassle of disabling constraints to perform parametric animations to a layer's properties.
 
 ## Demo
 
-Since the scope of the documentation is limited to a handlful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project. 
+Since the scope of the documentation is limited to a handful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project. 
 
 The demo app provides the ability to pick different options in the method call, once selected, the app will align a demo view on the screen to it's final frame, and provide a code example to reflect it.
 
-An example of how the view controller is layed out in the demo app is can be found [here](/Documentation/demo.md)
+An example of how the view controller is laid out in the demo app is can be found [here](/Documentation/demo.md)
 
 ## Installation
 
@@ -27,14 +27,14 @@ An example of how the view controller is layed out in the demo app is can be fou
 
 ## Basic Use
 
-The UIView Extension which contains the `align` method, when called by a view, the calling view will set it's own frame relatively, as specified by the parameters in the method call . The method containts 6 optional paramaters with assigned defaults, thus creating very poweful and flexible method signature with lots of possibilities. See below for an indepth examples below for definitions of each parameter.
+The UIView Extension which contains the `align` method, when called by a view, the calling view will set it's own frame relatively as specified by the parameters in the method call . The method constraints 6 optional parameters with assigned defaults, thus creating very powerful and flexible method signature with lots of possibilities. See below for an in-depth examples below for definitions of each parameter.
 
 There are two enumerators defined for horizontal and vertical alignment. These are the magic options that allow you to align the calling view relative to another frame.
 
 <br>
 
 
-```swift 
+```   
    func align(toFrame  frame             : CGRect? = nil,
                withSize size             : CGSize? = nil,        
                         horizontal       : HorizontalAlign,  
@@ -43,16 +43,16 @@ There are two enumerators defined for horizontal and vertical alignment. These a
                         verticalOffset   : CGFloat = 0.0)
 ```
 
-When performing animations, there often comes a need to calculate the frame to perform an animation. The following method returns a precalculate the frame based on the method parameters included, without actuially setitng it on the callign view. The `align` method actually this to calculate it's final value.
+When performing animations, there often comes a need to calculate the frame to perform an animation. The following method returns a pre-calculate the frame based on the method parameters included, without actually setting it on the calling view. The `align` method actually this to calculate it's final value.
 
 
-```swift
-   func rectAligned(toFrame frame    : CGRect  = CGRectZero,
-                    withSize size    : CGSize? = nil,
-                    horizontal       : HorizontalAlign,
-                    vertical         : VerticalAlign,
-                    horizontalOffset : CGFloat = 0.0,
-                    verticalOffset   : CGFloat = 0.0) -> CGRect
+```
+   func rectAligned(toFrame frame              : CGRect  = CGRectZero,
+                     withSize size             : CGSize? = nil,
+                              horizontal       : HorizontalAlign,
+                              vertical         : VerticalAlign,
+                              horizontalOffset : CGFloat = 0.0,
+                              verticalOffset   : CGFloat = 0.0) -> CGRect
 
 ```
 
@@ -60,7 +60,7 @@ When performing animations, there often comes a need to calculate the frame to p
 
 The following horizontal options align the calling view on the horizontal plane, with illustrations below
 
-```swift
+```
 public enum HorizontalAlign {
     case left           // Align horizontally to the Left
     case leftEdge       // Align horizontally to the Left Edge
@@ -78,7 +78,7 @@ public enum HorizontalAlign {
 The vertical options align the calling view on the vertical plane, with illustrations below
 
 
-```swift
+```
 public enum VerticalAlign {
     case above          // Align vertically Above
     case top            // Align vertically to the top
@@ -94,14 +94,14 @@ public enum VerticalAlign {
 
 ##### Example 1
 
-In the following example, first we add the a new view named **bigView** as a subview, and say you want to align it dead center relative to the superview's bounds. It's as calling align against the view with the following method. This call with align the big **bigView** against the view's bounds that it was added to, with a horizontal, and vertical, alignment of ``.center``.
+In the following example, first we add the a new view named **bigView** as a subview, and say you want to align it dead center relative to the superview's bounds. It's as calling align against the view with the following method. This call with align the big **bigView** against the view's bounds that it was added to, with a horizontal, and vertical, alignment of ``.Center``.
 
 
-```swift
+```
    view.addSubview(bigView)
 
    bigView.align(toFrame    : view.bounds,     
-                 withSize   : CGSize(width : 140.0, height : 140.0),        
+   			     withSize   : CGSize(width : 140.0, height : 140.0),        
                  horizontal : .center,  
                  vertical   : .center)
 ```
@@ -110,9 +110,9 @@ Note: In the case that the calculated frame is the same as the calling views fra
 
 ##### Example 2
 
-The call in Example 1 can also be expressed by ommitting **toFrame** parameter. In the absense of the **toFrame** parameter from the method call, the framework automatically assumes that you are intending to align the calling view against the it's superview's bounds.
+The call in Example 1 can also be expressed by omitting **toFrame** parameter. In the absence of the **toFrame** parameter from the method call, the framework automatically assumes that you are intending to align the calling view against the it's superview's bounds.
 
-```swift
+```
    view.addSubview(bigView)
 
    bigView.align(withSize   : CGSize(width : 140.0, height : 140.0),        
@@ -122,9 +122,9 @@ The call in Example 1 can also be expressed by ommitting **toFrame** parameter. 
 
 ##### Example 3
 
-What if we implemented a ``sizeToFit()`` method on our calling view.  In the absense of the **withSize** parameter from the method call, the framework automatically assumes that you are intending to use the current size of the calling view.
+What if we implemented a ``sizeToFit()`` method on our calling view.  In the absence of the **withSize** parameter from the method call, the framework automatically assumes that you are intending to use the current size of the calling view.
 
-```swift
+```
    view.addSubview(bigView)
    
    bigView.sizeToFit()
@@ -134,10 +134,10 @@ What if we implemented a ``sizeToFit()`` method on our calling view.  In the abs
 
 ###### Example 4
 
-The above example, can also be expressed by ommitting **horizontal** and **vertical** parameters. In the absense of the **horizontal** and **vertical** parameters from the method call, the framework automatically assumes that you are intending to align the calling view's to the center horizontally, and vertically, by defaulting to ``.center``.
+The above example, can also be expressed by omitting **horizontal** and **vertical** parameters. In the absence of the **horizontal** and **vertical** parameters from the method call, the framework automatically assumes that you are intending to align the calling view's to the center horizontally, and vertically, by defaulting to ``.Center``.
 
 
-```swift
+```
    view.addSubview(bigView)
    
    bigView.sizeToFit()
@@ -152,12 +152,12 @@ The **horizontalOffset** and **verticalOffset** parameters adjust the calling vi
 Lets assume we want to center the view and adjust it 20px right, and 20px upward. We can do this by including the **horizontalOffset** and **verticalOffset** and update the offset as follows.
 
 
-```swift
+```
    view.addSubview(bigView)
    
    bigView.sizeToFit()
-   bigView.align(horizontal       : .center,  
-                 vertical         : .center,
+   bigView.align(horizontal : .center,  
+                 vertical   : .center,
                  horizontalOffset : 20.0,
                  verticalOffset   : -20.0)
 ```
