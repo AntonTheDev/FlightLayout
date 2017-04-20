@@ -34,7 +34,7 @@ There are two enumerators defined for horizontal and vertical alignment. These a
 <br>
 
 
-```   
+```swift 
    func align(toFrame  frame             : CGRect? = nil,
                withSize size             : CGSize? = nil,        
                         horizontal       : HorizontalAlign,  
@@ -46,13 +46,13 @@ There are two enumerators defined for horizontal and vertical alignment. These a
 When performing animations, there often comes a need to calculate the frame to perform an animation. The following method returns a precalculate the frame based on the method parameters included, without actuially setitng it on the callign view. The `align` method actually this to calculate it's final value.
 
 
-```
-   func rectAligned(toFrame frame              : CGRect  = CGRectZero,
-                     withSize size             : CGSize? = nil,
-                              horizontal       : HorizontalAlign,
-                              vertical         : VerticalAlign,
-                              horizontalOffset : CGFloat = 0.0,
-                              verticalOffset   : CGFloat = 0.0) -> CGRect
+```swift
+   func rectAligned(toFrame frame    : CGRect  = CGRectZero,
+                    withSize size    : CGSize? = nil,
+                    horizontal       : HorizontalAlign,
+                    vertical         : VerticalAlign,
+                    horizontalOffset : CGFloat = 0.0,
+                    verticalOffset   : CGFloat = 0.0) -> CGRect
 
 ```
 
@@ -60,7 +60,7 @@ When performing animations, there often comes a need to calculate the frame to p
 
 The following horizontal options align the calling view on the horizontal plane, with illustrations below
 
-```
+```swift
 public enum HorizontalAlign {
     case left           // Align horizontally to the Left
     case leftEdge       // Align horizontally to the Left Edge
@@ -78,7 +78,7 @@ public enum HorizontalAlign {
 The vertical options align the calling view on the vertical plane, with illustrations below
 
 
-```
+```swift
 public enum VerticalAlign {
     case above          // Align vertically Above
     case top            // Align vertically to the top
@@ -94,14 +94,14 @@ public enum VerticalAlign {
 
 ##### Example 1
 
-In the following example, first we add the a new view named **bigView** as a subview, and say you want to align it dead center relative to the superview's bounds. It's as calling align against the view with the following method. This call with align the big **bigView** against the view's bounds that it was added to, with a horizontal, and vertical, alignment of ``.Center``.
+In the following example, first we add the a new view named **bigView** as a subview, and say you want to align it dead center relative to the superview's bounds. It's as calling align against the view with the following method. This call with align the big **bigView** against the view's bounds that it was added to, with a horizontal, and vertical, alignment of ``.center``.
 
 
-```
+```swift
    view.addSubview(bigView)
 
    bigView.align(toFrame    : view.bounds,     
-   			     withSize   : CGSize(width : 140.0, height : 140.0),        
+                 withSize   : CGSize(width : 140.0, height : 140.0),        
                  horizontal : .center,  
                  vertical   : .center)
 ```
@@ -112,7 +112,7 @@ Note: In the case that the calculated frame is the same as the calling views fra
 
 The call in Example 1 can also be expressed by ommitting **toFrame** parameter. In the absense of the **toFrame** parameter from the method call, the framework automatically assumes that you are intending to align the calling view against the it's superview's bounds.
 
-```
+```swift
    view.addSubview(bigView)
 
    bigView.align(withSize   : CGSize(width : 140.0, height : 140.0),        
@@ -124,7 +124,7 @@ The call in Example 1 can also be expressed by ommitting **toFrame** parameter. 
 
 What if we implemented a ``sizeToFit()`` method on our calling view.  In the absense of the **withSize** parameter from the method call, the framework automatically assumes that you are intending to use the current size of the calling view.
 
-```
+```swift
    view.addSubview(bigView)
    
    bigView.sizeToFit()
@@ -134,10 +134,10 @@ What if we implemented a ``sizeToFit()`` method on our calling view.  In the abs
 
 ###### Example 4
 
-The above example, can also be expressed by ommitting **horizontal** and **vertical** parameters. In the absense of the **horizontal** and **vertical** parameters from the method call, the framework automatically assumes that you are intending to align the calling view's to the center horizontally, and vertically, by defaulting to ``.Center``.
+The above example, can also be expressed by ommitting **horizontal** and **vertical** parameters. In the absense of the **horizontal** and **vertical** parameters from the method call, the framework automatically assumes that you are intending to align the calling view's to the center horizontally, and vertically, by defaulting to ``.center``.
 
 
-```
+```swift
    view.addSubview(bigView)
    
    bigView.sizeToFit()
@@ -152,12 +152,12 @@ The **horizontalOffset** and **verticalOffset** parameters adjust the calling vi
 Lets assume we want to center the view and adjust it 20px right, and 20px upward. We can do this by including the **horizontalOffset** and **verticalOffset** and update the offset as follows.
 
 
-```
+```swift
    view.addSubview(bigView)
    
    bigView.sizeToFit()
-   bigView.align(horizontal : .center,  
-                 vertical   : .center,
+   bigView.align(horizontal       : .center,  
+                 vertical         : .center,
                  horizontalOffset : 20.0,
                  verticalOffset   : -20.0)
 ```
