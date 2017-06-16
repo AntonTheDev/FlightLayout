@@ -2,9 +2,8 @@
 
 [![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.8.0-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
-[![Platform][![Platform](https://img.shields.io/badge/platform-ios|tvos-lightgrey.svg)]
+[![Platform](https://img.shields.io/badge/platform-ios|tvos-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
-
 [![Join the chat at https://gitter.im/AntonTheDev/FlightLayout](https://badges.gitter.im/AntonTheDev/FlightLayout.svg)](https://gitter.im/AntonTheDev/FlightLayout?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![alt tag](/Documentation/FlightLayout.png?raw=true)
