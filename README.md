@@ -2,10 +2,12 @@
 
 [![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.8.0-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
-[![Platform][![Platform](https://img.shields.io/badge/platform-ios-tvos-lightgrey.svg)]
+[![Platform][![Platform](https://img.shields.io/badge/platform-ios|tvos-lightgrey.svg)]
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
-![alt tag](/Documentation/FlightLayout.png?raw=true)
+
 [![Join the chat at https://gitter.im/AntonTheDev/FlightLayout](https://badges.gitter.im/AntonTheDev/FlightLayout.svg)](https://gitter.im/AntonTheDev/FlightLayout?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+![alt tag](/Documentation/FlightLayout.png?raw=true)
 ## Introduction
 
 FlightLayout is a light weight, and easy to learn layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic constraint approach.
