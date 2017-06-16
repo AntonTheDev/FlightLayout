@@ -1,12 +1,11 @@
 # FlightLayout
 
-[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.7.1-blue.svg)]()
+[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.8.0-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
-[![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)]()
+[![Platform][![Platform](https://img.shields.io/badge/platform-ios-tvos-lightgrey.svg)]
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
-
 ![alt tag](/Documentation/FlightLayout.png?raw=true)
-
+[![Join the chat at https://gitter.im/AntonTheDev/FlightLayout](https://badges.gitter.im/AntonTheDev/FlightLayout.svg)](https://gitter.im/AntonTheDev/FlightLayout?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ## Introduction
 
 FlightLayout is a light weight, and easy to learn layout framework as an extension of the UIView. Functionally, it lives somewhere in between the manual process of laying out views from the old days, and the flexibility of Autolayout's dynamic constraint approach.
@@ -15,7 +14,7 @@ Some use cases for this framework include the ability to animate views with core
 
 ## Demo
 
-Since the scope of the documentation is limited to a handful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project. 
+Since the scope of the documentation is limited to a handful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project.
 
 The demo app provides the ability to pick different options in the method call, once selected, the app will align a demo view on the screen to it's final frame, and provide a code example to reflect it.
 
@@ -38,8 +37,8 @@ There are two enumerators defined for horizontal and vertical alignment. These a
    func align(toFrame  frame             : CGRect? = nil,
                withSize size             : CGSize? = nil,        
                         horizontal       : HorizontalAlign,  
-                        vertical         : VerticalAlign, 
-                        horizontalOffset : CGFloat = 0.0, 
+                        vertical         : VerticalAlign,
+                        horizontalOffset : CGFloat = 0.0,
                         verticalOffset   : CGFloat = 0.0)
 ```
 
@@ -126,7 +125,7 @@ What if we implemented a ``sizeToFit()`` method on our calling view.  In the abs
 
 ```
    view.addSubview(bigView)
-   
+
    bigView.sizeToFit()
    bigView.align(horizontal : .center,  
                  vertical   : .center)
@@ -139,22 +138,22 @@ The above example, can also be expressed by omitting **horizontal** and **vertic
 
 ```
    view.addSubview(bigView)
-   
+
    bigView.sizeToFit()
    bigView.align()
-   
+
 ```
 
 ### Horizontal & Vertical Offset
 
-The **horizontalOffset** and **verticalOffset** parameters adjust the calling view's final frame on the **horizontal** and **vertical** alignment parameters. 
+The **horizontalOffset** and **verticalOffset** parameters adjust the calling view's final frame on the **horizontal** and **vertical** alignment parameters.
 
 Lets assume we want to center the view and adjust it 20px right, and 20px upward. We can do this by including the **horizontalOffset** and **verticalOffset** and update the offset as follows.
 
 
 ```
    view.addSubview(bigView)
-   
+
    bigView.sizeToFit()
    bigView.align(horizontal : .center,  
                  vertical   : .center,
@@ -166,19 +165,19 @@ Lets assume we want to center the view and adjust it 20px right, and 20px upward
 <br>
 
      The MIT License (MIT)  
-      
+
      Copyright (c) 2016 Anton Doudarev  
-      
+
      Permission is hereby granted, free of charge, to any person obtaining a copy
      of this software and associated documentation files (the "Software"), to deal
      in the Software without restriction, including without limitation the rights
      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
      copies of the Software, and to permit persons to whom the Software is
      furnished to do so, subject to the following conditions:  
-     
+
      The above copyright notice and this permission notice shall be included in all
      copies or substantial portions of the Software.  
-      
+
      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE

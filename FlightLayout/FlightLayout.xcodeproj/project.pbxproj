@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130387201EF41BAF00689188 /* FlightLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2A63291EA733A4009949DF /* FlightLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		130387211EF41E1900689188 /* FlightLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A636D1EA733F1009949DF /* FlightLayout.swift */; };
 		3A2A63301EA733A4009949DF /* FlightLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A63261EA733A4009949DF /* FlightLayout.framework */; };
 		3A2A63351EA733A4009949DF /* FlightLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A63341EA733A4009949DF /* FlightLayoutTests.swift */; };
 		3A2A63371EA733A4009949DF /* FlightLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2A63291EA733A4009949DF /* FlightLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,9 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130387181EF41BA300689188 /* FlightLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlightLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A63261EA733A4009949DF /* FlightLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlightLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A63291EA733A4009949DF /* FlightLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightLayout.h; sourceTree = "<group>"; };
-		3A2A632A1EA733A4009949DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A2A632F1EA733A4009949DF /* FlightLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A63341EA733A4009949DF /* FlightLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLayoutTests.swift; sourceTree = "<group>"; };
 		3A2A63361EA733A4009949DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +37,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		130387141EF41BA300689188 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A2A63221EA733A4009949DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,6 +76,7 @@
 			children = (
 				3A2A63261EA733A4009949DF /* FlightLayout.framework */,
 				3A2A632F1EA733A4009949DF /* FlightLayoutTests.xctest */,
+				130387181EF41BA300689188 /* FlightLayout.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,7 +86,6 @@
 			children = (
 				3A2A63291EA733A4009949DF /* FlightLayout.h */,
 				3A2A636C1EA733F1009949DF /* Source */,
-				3A2A632A1EA733A4009949DF /* Info.plist */,
 			);
 			path = FlightLayout;
 			sourceTree = "<group>";
@@ -102,6 +111,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		130387151EF41BA300689188 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				130387201EF41BAF00689188 /* FlightLayout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A2A63231EA733A4009949DF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +130,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		130387171EF41BA300689188 /* FlightLayout-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1303871F1EF41BA300689188 /* Build configuration list for PBXNativeTarget "FlightLayout-tvOS" */;
+			buildPhases = (
+				130387131EF41BA300689188 /* Sources */,
+				130387141EF41BA300689188 /* Frameworks */,
+				130387151EF41BA300689188 /* Headers */,
+				130387161EF41BA300689188 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlightLayout-tvOS";
+			productName = "FlightLayout-tvOS";
+			productReference = 130387181EF41BA300689188 /* FlightLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		3A2A63251EA733A4009949DF /* FlightLayout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A2A633A1EA733A4009949DF /* Build configuration list for PBXNativeTarget "FlightLayout" */;
@@ -159,6 +194,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Anton Doudarev";
 				TargetAttributes = {
+					130387171EF41BA300689188 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					3A2A63251EA733A4009949DF = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = WQAUP4LZJV;
@@ -185,11 +224,19 @@
 			targets = (
 				3A2A63251EA733A4009949DF /* FlightLayout */,
 				3A2A632E1EA733A4009949DF /* FlightLayoutTests */,
+				130387171EF41BA300689188 /* FlightLayout-tvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		130387161EF41BA300689188 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A2A63241EA733A4009949DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,6 +254,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		130387131EF41BA300689188 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				130387211EF41E1900689188 /* FlightLayout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3A2A63211EA733A4009949DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +290,48 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1303871D1EF41BA300689188 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Shared/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iagd.flightlayout.FlightLayout-tvOS.FlightLayout-tvOS";
+				PRODUCT_NAME = FlightLayout;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		1303871E1EF41BA300689188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Shared/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iagd.flightlayout.FlightLayout-tvOS.FlightLayout-tvOS";
+				PRODUCT_NAME = FlightLayout;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
 		3A2A63381EA733A4009949DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -345,7 +442,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FlightLayout/Info.plist;
+				INFOPLIST_FILE = "Shared/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -365,7 +462,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FlightLayout/Info.plist;
+				INFOPLIST_FILE = "Shared/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -405,6 +502,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1303871F1EF41BA300689188 /* Build configuration list for PBXNativeTarget "FlightLayout-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1303871D1EF41BA300689188 /* Debug */,
+				1303871E1EF41BA300689188 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3A2A63201EA733A4009949DF /* Build configuration list for PBXProject "FlightLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
