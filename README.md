@@ -1,6 +1,6 @@
 # FlightLayout
 
-[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.8.0-blue.svg)]()
+[![Cocoapods Compatible](https://img.shields.io/badge/pod-v0.8.1-blue.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]()
 [![Platform](https://img.shields.io/badge/platform-ios%20%7C%20tvos-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-343434.svg)]()
