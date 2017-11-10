@@ -15,9 +15,7 @@ Some use cases for this framework include the ability to animate views with core
 
 ## Demo
 
-Since the scope of the documentation is limited to a handful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project.
-
-The demo app provides the ability to pick different options in the method call, once selected, the app will align a demo view on the screen to it's final frame, and provide a code example to reflect it.
+Since the scope of the documentation is limited to a handful of examples, once you have finished with the reading the documentation below, feel free to clone the project and run the demo app with the project. The demo app provides the ability to pick different options in the method call, once selected, the app will align a demo view on the screen to it's final frame, and provide a code example to reflect it.
 
 An example of how the view controller is laid out in the demo app is can be found [here](/Documentation/demo.md)
 
@@ -34,33 +32,32 @@ There are two enumerators defined for horizontal and vertical alignment. These a
 <br>
 
 
-```   
-   func align(toFrame  frame             : CGRect? = nil,
-               withSize size             : CGSize? = nil,        
-                        horizontal       : HorizontalAlign,  
-                        vertical         : VerticalAlign,
-                        horizontalOffset : CGFloat = 0.0,
-                        verticalOffset   : CGFloat = 0.0)
+```swift   
+func align(toFrame frame    : CGRect? = nil,
+           withSize size    : CGSize? = nil,        
+           horizontal       : HorizontalAlign,  
+           vertical         : VerticalAlign,
+           horizontalOffset : CGFloat = 0.0,
+           verticalOffset   : CGFloat = 0.0)
 ```
 
 When performing animations, there often comes a need to calculate the frame to perform an animation. The following method returns a pre-calculate the frame based on the method parameters included, without actually setting it on the calling view. The `align` method actually this to calculate it's final value.
 
 
-```
-   func rectAligned(toFrame frame              : CGRect  = CGRectZero,
-                     withSize size             : CGSize? = nil,
-                              horizontal       : HorizontalAlign,
-                              vertical         : VerticalAlign,
-                              horizontalOffset : CGFloat = 0.0,
-                              verticalOffset   : CGFloat = 0.0) -> CGRect
-
+```swift
+func rectAligned(toFrame frame    : CGRect  = CGRectZero,
+                 withSize size    : CGSize? = nil,
+                 horizontal       : HorizontalAlign,
+                 vertical         : VerticalAlign,
+                 horizontalOffset : CGFloat = 0.0,
+                 verticalOffset   : CGFloat = 0.0) -> CGRect
 ```
 
 ### Horizontal Alignment
 
 The following horizontal options align the calling view on the horizontal plane, with illustrations below
 
-```
+```swift
 public enum HorizontalAlign {
     case left           // Align horizontally to the Left
     case leftEdge       // Align horizontally to the Left Edge
@@ -78,7 +75,7 @@ public enum HorizontalAlign {
 The vertical options align the calling view on the vertical plane, with illustrations below
 
 
-```
+```swift
 public enum VerticalAlign {
     case above          // Align vertically Above
     case top            // Align vertically to the top
@@ -97,13 +94,13 @@ public enum VerticalAlign {
 In the following example, first we add the a new view named **bigView** as a subview, and say you want to align it dead center relative to the superview's bounds. It's as calling align against the view with the following method. This call with align the big **bigView** against the view's bounds that it was added to, with a horizontal, and vertical, alignment of ``.center``.
 
 
-```
-   view.addSubview(bigView)
+```swift
+view.addSubview(bigView)
 
-   bigView.align(toFrame    : view.bounds,     
+bigView.align(toFrame   : view.bounds,     
    			     withSize   : CGSize(width : 140.0, height : 140.0),        
-                 horizontal : .center,  
-                 vertical   : .center)
+             horizontal : .center,  
+             vertical   : .center)
 ```
 
 Note: In the case that the calculated frame is the same as the calling views frame, it will not actually set the frame on the caller, it will just exit. This helps avoid glitches during animations, i.e  setting the frame on the view that is currently animating, will flicker the view to it's final position.
@@ -112,24 +109,24 @@ Note: In the case that the calculated frame is the same as the calling views fra
 
 The call in Example 1 can also be expressed by omitting **toFrame** parameter. In the absence of the **toFrame** parameter from the method call, the framework automatically assumes that you are intending to align the calling view against the it's superview's bounds.
 
-```
-   view.addSubview(bigView)
+```swift
+view.addSubview(bigView)
 
-   bigView.align(withSize   : CGSize(width : 140.0, height : 140.0),        
-                 horizontal : .center,  
-                 vertical   : .center)
+bigView.align(withSize   : CGSize(width : 140.0, height : 140.0),        
+              horizontal : .center,  
+              vertical   : .center)
 ```
 
 ##### Example 3
 
 What if we implemented a ``sizeToFit()`` method on our calling view.  In the absence of the **withSize** parameter from the method call, the framework automatically assumes that you are intending to use the current size of the calling view.
 
-```
-   view.addSubview(bigView)
+```swift
+view.addSubview(bigView)
 
-   bigView.sizeToFit()
-   bigView.align(horizontal : .center,  
-                 vertical   : .center)
+bigView.sizeToFit()
+bigView.align(horizontal : .center,  
+              vertical   : .center)
 ```
 
 ###### Example 4
@@ -137,12 +134,11 @@ What if we implemented a ``sizeToFit()`` method on our calling view.  In the abs
 The above example, can also be expressed by omitting **horizontal** and **vertical** parameters. In the absence of the **horizontal** and **vertical** parameters from the method call, the framework automatically assumes that you are intending to align the calling view's to the center horizontally, and vertically, by defaulting to ``.Center``.
 
 
-```
-   view.addSubview(bigView)
+```swift
+view.addSubview(bigView)
 
-   bigView.sizeToFit()
-   bigView.align()
-
+bigView.sizeToFit()
+bigView.align()
 ```
 
 ### Horizontal & Vertical Offset
@@ -152,19 +148,18 @@ The **horizontalOffset** and **verticalOffset** parameters adjust the calling vi
 Lets assume we want to center the view and adjust it 20px right, and 20px upward. We can do this by including the **horizontalOffset** and **verticalOffset** and update the offset as follows.
 
 
-```
-   view.addSubview(bigView)
+```swift
+view.addSubview(bigView)
 
-   bigView.sizeToFit()
-   bigView.align(horizontal : .center,  
-                 vertical   : .center,
-                 horizontalOffset : 20.0,
-                 verticalOffset   : -20.0)
+bigView.sizeToFit()
+bigView.align(horizontal       : .center,  
+              vertical         : .center,
+              horizontalOffset : 20.0,
+              verticalOffset   : -20.0)
 ```
 
 ## License
 <br>
-
      The MIT License (MIT)  
 
      Copyright (c) 2016 Anton Doudarev  
