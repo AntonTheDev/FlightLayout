@@ -152,7 +152,7 @@ extension UIView {
             origin = toRect.maxX - sourceRect.size.width;
         }
         
-        return floor(origin)
+        return ceil(origin)
     }
     
     /**
@@ -177,6 +177,6 @@ extension UIView {
             origin = toRect.maxY
         }
         
-        return floor(origin)
+        return ceil(origin)
     }
 }
