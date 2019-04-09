@@ -43,7 +43,7 @@ public extension UIView {
      - parameter horizontalOffset: horizontal offset to apply to the calculated relative frame, defautls to 0
      - parameter verticalOffset:   vertical offset to apply to the calculated relative frame, defautls to 0
      */
-    public func align(toFrame frame   : CGRect? = nil,
+    func align(toFrame frame   : CGRect? = nil,
                       withSize size    : CGSize? = nil,
                       horizontal       : HorizontalAlign = .center,
                       vertical         : VerticalAlign = .center,
