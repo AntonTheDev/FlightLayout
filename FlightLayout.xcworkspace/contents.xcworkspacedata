@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FlightLayout/FlightLayout.xcodeproj">
+      location = "group:FlightLayout">
    </FileRef>
    <FileRef
       location = "group:FlightLayout-Demo/FlightLayout-Demo.xcodeproj">
