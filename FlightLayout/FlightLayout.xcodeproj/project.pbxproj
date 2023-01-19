@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3E9232297A04D900391DF7 /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = 0B3E9231297A04D900391DF7 /* Sources */; };
+		0B3E9233297A04DA00391DF7 /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = 0B3E9231297A04D900391DF7 /* Sources */; };
+		0B3E9234297A04DA00391DF7 /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = 0B3E9231297A04D900391DF7 /* Sources */; };
 		130387201EF41BAF00689188 /* FlightLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2A63291EA733A4009949DF /* FlightLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		130387211EF41E1900689188 /* FlightLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A636D1EA733F1009949DF /* FlightLayout.swift */; };
 		3A2A63301EA733A4009949DF /* FlightLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2A63261EA733A4009949DF /* FlightLayout.framework */; };
 		3A2A63351EA733A4009949DF /* FlightLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A63341EA733A4009949DF /* FlightLayoutTests.swift */; };
 		3A2A63371EA733A4009949DF /* FlightLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A2A63291EA733A4009949DF /* FlightLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A2A636E1EA733F1009949DF /* FlightLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A636D1EA733F1009949DF /* FlightLayout.swift */; };
-		3A2A636F1EA733F1009949DF /* FlightLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2A636D1EA733F1009949DF /* FlightLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,13 +27,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B3E9231297A04D900391DF7 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sources; path = ../../Sources; sourceTree = "<group>"; };
 		130387181EF41BA300689188 /* FlightLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlightLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A63261EA733A4009949DF /* FlightLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlightLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A63291EA733A4009949DF /* FlightLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightLayout.h; sourceTree = "<group>"; };
 		3A2A632F1EA733A4009949DF /* FlightLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2A63341EA733A4009949DF /* FlightLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLayoutTests.swift; sourceTree = "<group>"; };
 		3A2A63361EA733A4009949DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A2A636D1EA733F1009949DF /* FlightLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +84,8 @@
 		3A2A63281EA733A4009949DF /* FlightLayout */ = {
 			isa = PBXGroup;
 			children = (
+				0B3E9231297A04D900391DF7 /* Sources */,
 				3A2A63291EA733A4009949DF /* FlightLayout.h */,
-				3A2A636C1EA733F1009949DF /* Source */,
 			);
 			path = FlightLayout;
 			sourceTree = "<group>";
@@ -97,15 +97,6 @@
 				3A2A63361EA733A4009949DF /* Info.plist */,
 			);
 			path = FlightLayoutTests;
-			sourceTree = "<group>";
-		};
-		3A2A636C1EA733F1009949DF /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				3A2A636D1EA733F1009949DF /* FlightLayout.swift */,
-			);
-			name = Source;
-			path = ../../Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +206,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 3A2A631C1EA733A4009949DF;
@@ -234,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3E9234297A04DA00391DF7 /* Sources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3E9232297A04D900391DF7 /* Sources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3E9233297A04DA00391DF7 /* Sources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				130387211EF41E1900689188 /* FlightLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A2A636E1EA733F1009949DF /* FlightLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2A63351EA733A4009949DF /* FlightLayoutTests.swift in Sources */,
-				3A2A636F1EA733F1009949DF /* FlightLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +470,6 @@
 		3A2A633E1EA733A4009949DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WQAUP4LZJV;
 				INFOPLIST_FILE = FlightLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -491,7 +482,6 @@
 		3A2A633F1EA733A4009949DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = WQAUP4LZJV;
 				INFOPLIST_FILE = FlightLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
